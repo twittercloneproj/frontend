@@ -5,7 +5,7 @@ import { TwitterRegisterBusinessComponent } from './twitter-register-business/tw
 import { TwitterRegisterComponent } from './twitter-register/twitter-register.component';
 
 const routes: Routes = [
-  { path: 'login', component: TwitterLoginComponent },
+  { path: '', component: TwitterLoginComponent },
   { path: 'register-business', component: TwitterRegisterBusinessComponent },
   { path: 'register', component: TwitterRegisterComponent },
 
