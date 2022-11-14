@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomefeedComponent } from './homefeed/homefeed.component';
+import { TweetTileComponent } from './tweet-tile/tweet-tile.component';
+import { TwitterSideMenuComponent } from './twitter-side-menu/twitter-side-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomefeedComponent,
+    TweetTileComponent,
+    TwitterSideMenuComponent
   ],
   imports: [
     BrowserModule,
