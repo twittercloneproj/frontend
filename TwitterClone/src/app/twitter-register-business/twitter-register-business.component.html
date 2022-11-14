@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Register</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="para">Register to Twitter as business user</p>
+
+        <div class="imgContainer">
+            <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
+        </div>
+
+        <div id="inpDiv">
+            <span id="span1">Company name</span>
+            <input type="text" name="" id="inp1">
+            <span id="span3">Email</span>
+            <input type="email" name="" id="inp3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <span id="span4">Web site</span>
+            <input type="text" name="" id="inp4">
+            <span id="span5">Username</span>
+            <input type="text" name="" id="inp5" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+            <span id="span2">Password</span>
+            <input type="password" name="" id="inp2">
+            <span id="span6">Show password</span>
+            <input type="checkbox" onclick="myFunction()" id="inp6">
+            <span id="span7">Repeated password</span>
+            <input type="password" name="" id="inp7">
+            <span id="span8">Show repeated password</span>
+            <input type="checkbox" onclick="myFunction2()" id="inp8">
+            <button id="btn1">Register</button>
+        </div>
+
+        <div id="link">
+
+        <a href="" >Already have an account? Log in to Twitter</a>
+ </div>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("inp2");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+
+        function myFunction2() {
+          var x = document.getElementById("inp7");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Login</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="para">Log in to Twitter</p>
+
+        <div class="imgContainer">
+            <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
+        </div>
+
+        <div id="inpDiv">
+            <span id="span1">Username</span>
+            <input type="text" name="" id="inp1">
+            <span id="span2">Password</span>
+            <input type="password" name="" id="inp2">
+            <span id="span3">Show password</span>
+            <input type="checkbox" onclick="myFunction()" id="inp3">
+            <button id="btn1">Log in</button>
+        </div>
+
+        <div id="link">
+            <a href="#" >Forgot password?</a>
+
+            <a href="register">Sign up for Twitter</a>
+        </div>
+
+        <div id="business">
+            <a href="register-business">Sign up as business user</a>
+      </div>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("inp2");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+    </script>
+</body>
+
+</html>
