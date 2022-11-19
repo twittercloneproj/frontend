@@ -10,6 +10,13 @@ import { TwitterLoginComponent } from './twitter-login/twitter-login.component';
 import { TwitterRegisterComponent } from './twitter-register/twitter-register.component';
 import { TwitterRegisterBusinessComponent } from './twitter-register-business/twitter-register-business.component';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { PasswordComponent } from './password/password.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { PostTileComponent } from './shared/post-tile/post-tile.component';
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { CreatePostComponent } from './post/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +26,20 @@ import { FormsModule } from '@angular/forms';
     TwitterSideMenuComponent,
     TwitterLoginComponent,
     TwitterRegisterComponent,
-    TwitterRegisterBusinessComponent
+    TwitterRegisterBusinessComponent,
+    PasswordComponent,
+    HeaderComponent,
+    HomeComponent,
+    PostTileComponent,
+    SideBarComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

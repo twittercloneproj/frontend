@@ -62,11 +62,11 @@ body {
 #inp4 {
     width: 32%;
     position: absolute;
-    top: 267px;
+    top: 240px;
     left: 472px;
     padding: 10px;
     opacity: 0.5;
-    height: 3px;
+    height: 26px;
     border: none;
     background-color: #f0f2f5;
     border-bottom: solid 2px black;
@@ -75,7 +75,7 @@ body {
 
 #span4 {
     position: absolute;
-    top: 270px;
+    top: 260px;
     font-size: 15px;
     left: 479px;
 }
@@ -104,8 +104,8 @@ body {
 #inp6 {
     width: 32%;
     position: absolute;
-    top: 410px;
-    left: 780px;
+    top: 401px;
+    left: 472px;
     padding: 10px;
     opacity: 0.5;
     height: 26px;
@@ -117,15 +117,15 @@ body {
 
 #span6 {
     position: absolute;
-    top: 420px;
+    top: 405px;
     font-size: 15px;
-    left: 1050px;
+    left: 479px;
 }
 
 #inp7 {
     width: 32%;
     position: absolute;
-    top: 460px;
+    top: 468px;
     left: 472px;
     padding: 10px;
     opacity: 0.5;
@@ -138,7 +138,7 @@ body {
 
 #span7 {
     position: absolute;
-    top: 465px;
+    top: 470px;
     font-size: 15px;
     left: 479px;
 }
@@ -146,7 +146,7 @@ body {
 #inp2 {
     width: 32%;
     position: absolute;
-    top: 400px;
+    top: 535px;
     left: 472px;
     padding: 10px;
     opacity: 0.5;
@@ -159,7 +159,7 @@ body {
 
 #span2 {
     position: absolute;
-    top: 407px;
+    top: 535px;
     font-size: 15px;
     left: 479px;
 }
@@ -167,8 +167,8 @@ body {
 #inp8 {
     width: 32%;
     position: absolute;
-    top: 480px;
-    left: 780px;
+    top: 602px;
+    left: 472px;
     padding: 10px;
     opacity: 0.5;
     height: 26px;
@@ -180,15 +180,57 @@ body {
 
 #span8 {
     position: absolute;
-    top: 488px;
+    top: 605px;
     font-size: 15px;
-    left: 1050px;
+    left: 479px;
+}
+
+#inp9 {
+    width: 32%;
+    position: absolute;
+    top: 550px;
+    left: 770px;
+    padding: 10px;
+    opacity: 0.5;
+    height: 26px;
+    border: none;
+    background-color: #f0f2f5;
+    border-bottom: solid 2px black;
+    padding-top: 18px;
+}
+
+#span9 {
+    position: absolute;
+    top: 557px;
+    font-size: 15px;
+    left: 1040px;
+}
+
+#inp10 {
+    width: 32%;
+    position: absolute;
+    top: 615px;
+    left: 770px;
+    padding: 10px;
+    opacity: 0.5;
+    height: 26px;
+    border: none;
+    background-color: #f0f2f5;
+    border-bottom: solid 2px black;
+    padding-top: 18px;
+}
+
+#span10 {
+    position: absolute;
+    top: 622px;
+    font-size: 15px;
+    left: 1040px;
 }
 
 #btn1 {
     width: 31%;
     position: absolute;
-    top: 540px;
+    top: 550px;
     left: 472px;
     border: none;
     background-color: #1da1f2;
@@ -201,7 +243,7 @@ body {
 
 #link {
     position: absolute;
-    top: 590px;
+    top: 615px;
     left: 570px;
 }
 
@@ -216,7 +258,7 @@ body {
 
 #para {
     position: absolute;
-    left: 570px;
+    left: 550px;
     top: 77px;
     font-size: 22px;
     font-weight: 700;

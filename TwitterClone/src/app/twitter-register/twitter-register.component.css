@@ -60,9 +60,9 @@ body {
 }
 
 #inp4 {
-    width: 33.4%;
+    width: 32%;
     position: absolute;
-    top: 267px;
+    top: 240px;
     left: 472px;
     padding: 10px;
     opacity: 0.5;
@@ -75,7 +75,7 @@ body {
 
 #span4 {
     position: absolute;
-    top: 270px;
+    top: 260px;
     font-size: 15px;
     left: 479px;
 }
@@ -262,4 +262,17 @@ body {
     top: 77px;
     font-size: 22px;
     font-weight: 700;
+}
+
+.is-invalid {
+    border-left: solid 6px red;
+}
+  
+/* .material-icons {
+    display: inline-flex;
+    vertical-align: middle;
+} */
+
+#password {
+    top: 500px;
 }

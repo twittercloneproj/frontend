@@ -15,15 +15,39 @@
             <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
         </div>
 
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
         <div id="inpDiv">
-            <span id="span1">Username</span>
-            <input type="text" name="" id="inp1">
-            <span id="span2">Password</span>
-            <input type="password" name="" id="inp2">
-            <span id="span3">Show password</span>
-            <input type="checkbox" onclick="myFunction()" id="inp3">
-            <button id="btn1">Log in</button>
+            <div class="col-md-6">
+                <input type="text" [formControlName]="'username'" id="inp1" class="form-control" name="username" required
+                    autofocus>
+                <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched" id="span1">
+                  Username is required
+                </span>
+                <span *ngIf="!loginForm.get('username').touched" id="span1">
+                  Username
+                </span>
+                <span id="span1">
+                  Username
+                </span>                                     
+              </div>
+              <div class="col-md-6">
+              <input type="password" [formControlName]="'password'" id="inp2" class="form-control" name="password" required
+                    autofocus minlength="8">
+                <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" id="span2">
+                  Password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
+                </span>
+                <span *ngIf="!loginForm.get('password').touched" id="span2">
+                  Password
+                </span>
+                <span id="span2">
+                  Password
+                </span> 
+              </div>
+              <button id="btn1" type="submit">Login</button>
         </div>
+
+        </form>
 
         <div id="link">
             <a href="#" >Forgot password?   </a>
@@ -33,6 +57,7 @@
         <div id="business">
             <a href="register-business">Sign up as business user      </a>
             <a href="home">Home feed</a>
+            <a href="password">Password</a>
       </div>
     </div>
 </body>
