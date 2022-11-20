@@ -2,9 +2,9 @@
     <div class="row">
       <hr />
       <div class="create-post-container col-md-9">
-        <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
+        <form class="post-form" [formGroup]="createTweetForm" (ngSubmit)="createTweet()">
           <div class="form-group">
-            <div class="create-post-heading">Create Post</div>
+            <div class="create-post-heading">Create tweet</div>
             <hr />
             <input type="text" [formControlName]="'text'" class="form-control" style="margin-top: 5px"
               placeholder="Text">
@@ -12,8 +12,8 @@
             <input type="text" class="form-control" [formControlName]="'user'" style="margin-top: 5px" placeholder="User">
             <span>
               <div style="margin-top: 5px" class="float-right">
-                <button (click)="discardPost()" class="btnDiscard">Discard</button>
-                <button class="btnCreatePost">Post</button>
+                <button (click)="discardTweet()" class="btnDiscard">Discard</button>
+                <button class="btnCreatePost">Tweet</button>
               </div>
             </span>
           </div>

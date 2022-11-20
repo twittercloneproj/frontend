@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TweetService } from 'src/app/shared/tweet.service';
 import { throwError } from 'rxjs';
-import { CreatePostPayload } from './create-post.payload';
+import { CreateTweetPayload } from './create-tweet.payload';
 
 @Component({
   selector: 'app-create-post',
@@ -11,30 +12,36 @@ import { CreatePostPayload } from './create-post.payload';
 })
 export class CreatePostComponent implements OnInit {
 
-  createPostForm: FormGroup;
-  postPayload: CreatePostPayload;
+  createTweetForm: FormGroup;
+  tweetPayload: CreateTweetPayload;
 
-  constructor(private router: Router) {
-    this.postPayload = {
+  constructor(private router: Router, private tweetService: TweetService) {
+    this.tweetPayload = {
       text: '',
       user: ''
     }
   }
 
   ngOnInit() {
-    this.createPostForm = new FormGroup({
+    this.createTweetForm = new FormGroup({
       text: new FormControl('', Validators.required),
       user: new FormControl('', Validators.required)
     });
   }
 
-  createPost() {
-    this.postPayload.text = this.createPostForm.get('text')?.value;
-    this.postPayload.user = this.createPostForm.get('user')?.value;
+  createTweet() {
+    this.tweetPayload.text = this.createTweetForm.get('text')?.value;
+    this.tweetPayload.user = this.createTweetForm.get('user')?.value;
+
+    this.tweetService.createTweet(this.tweetPayload).subscribe((data) => {
+      this.router.navigateByUrl('/all');
+    }, error => {
+      throwError(error);
+    })
   }
 
-  discardPost() {
-    this.router.navigateByUrl('/');
+  discardTweet() {
+    this.router.navigateByUrl('/all');
   }
 
 }

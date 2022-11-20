@@ -9,13 +9,13 @@ import { TwitterRegisterBusinessComponent } from './twitter-register-business/tw
 import { TwitterRegisterComponent } from './twitter-register/twitter-register.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'all', component: HomeComponent },
   { path: 'login', component: TwitterLoginComponent},
   { path: 'register-business', component: TwitterRegisterBusinessComponent },
   { path: 'register', component: TwitterRegisterComponent },
   { path: 'home', component: HomefeedComponent },
   { path: 'password', component: PasswordComponent},
-  { path: 'create-post', component: CreatePostComponent}
+  { path: 'tweets', component: CreatePostComponent}
 ];
 
 @NgModule({

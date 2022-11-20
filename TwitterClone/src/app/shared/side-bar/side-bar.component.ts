@@ -13,8 +13,8 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToCreatePost() {
-    this.router.navigateByUrl('/create-post');
+  goToCreateTweet() {
+    this.router.navigateByUrl('/tweets');
   }
 
 }

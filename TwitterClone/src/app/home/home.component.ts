@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostModel } from '../shared/post-model';
+import { TweetModel } from '../shared/tweet-model';
+import { TweetService } from '../shared/tweet.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { PostModel } from '../shared/post-model';
 })
 export class HomeComponent implements OnInit {
 
-  posts: Array<PostModel> = [];
+  tweets: Array<TweetModel> = [];
 
-  constructor() { }
+  constructor(private tweetService: TweetService) { 
+    this.tweetService.getAllTweets().subscribe(tweet => {
+      this.tweets = tweet;
+    });
+  }
 
   ngOnInit(): void {
   }
