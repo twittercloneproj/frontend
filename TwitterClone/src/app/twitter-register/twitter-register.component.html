@@ -71,12 +71,12 @@
               </span>                                     
             </div>
             <div class="col-md-6">
-              <input type="text" [formControlName]="'place'" id="inp6" class="form-control" name="place" required
+              <input type="text" [formControlName]="'town'" id="inp6" class="form-control" name="town" required
                   autofocus>
-              <span *ngIf="!signupForm.get('place').valid && signupForm.get('place').touched" id="span6">
+              <span *ngIf="!signupForm.get('town').valid && signupForm.get('town').touched" id="span6">
                 Place is required
               </span>
-              <span *ngIf="!signupForm.get('place').touched" id="span6">
+              <span *ngIf="!signupForm.get('town').touched" id="span6">
                 Place
               </span>
               <span id="span6">
@@ -109,7 +109,7 @@
                 Password
               </span> 
             </div>
-            <div class="col-md-6">
+            <!--<div class="col-md-6">
               <input type="password" [formControlName]="'repeatedPassword'" id="inp8" class="form-control" name="repeatedPassword" required
                   autofocus minlength="8">
               <span *ngIf="!signupForm.get('repeatedPassword').valid && signupForm.get('repeatedPassword').touched" id="span8">
@@ -121,8 +121,8 @@
               <span id="span8">
                 Repeated password
               </span>                                     
-            </div>
-            <button id="btn1" type="submit">Register</button>
+            </div> -->
+            <button id="btn1">Register</button>
         </div>
 
         </form>

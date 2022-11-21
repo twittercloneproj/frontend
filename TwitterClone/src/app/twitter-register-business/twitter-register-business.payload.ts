@@ -1,8 +1,14 @@
 export interface TwitterRegisterBusinessPayload {
-    companyName: string;
-    email: string;
-    website: string;
+    //id: number;
+    //name: string;
+    //surname: string;
     username: string;
     password: string;
-    repeatedPassword: string;
+    //sex: string;
+    //age: number;
+    //town: string;
+    email: string;
+    firm: string;
+    website: string;
+    //role: string;
 }

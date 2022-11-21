@@ -15,16 +15,16 @@
             <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
         </div>
 
-        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <form [formGroup]="signupForm" (ngSubmit)="signupBusiness()">
 
             <div id="inpDiv">
                 <div class="col-md-6">
-                    <input type="text" [formControlName]="'companyName'" id="inp1" class="form-control" name="companyName" required
+                    <input type="text" [formControlName]="'firm'" id="inp1" class="form-control" name="firm" required
                         autofocus>
-                    <span *ngIf="!signupForm.get('companyName').valid && signupForm.get('companyName').touched" id="span1">
+                    <span *ngIf="!signupForm.get('firm').valid && signupForm.get('firm').touched" id="span1">
                       Company name is required
                     </span>
-                    <span *ngIf="!signupForm.get('companyName').touched" id="span1">
+                    <span *ngIf="!signupForm.get('firm').touched" id="span1">
                       Company name
                     </span>
                     <span id="span1">
@@ -81,7 +81,7 @@
                       <span id="span6">
                         Password
                       </span> 
-                    <div class="col-md-6">
+                    <!--<div class="col-md-6">
                       <input type="password" [formControlName]="'repeatedPassword'" id="inp7" class="form-control" name="repeatedPassword" required
                           autofocus minlength="8">
                       <span *ngIf="!signupForm.get('repeatedPassword').valid && signupForm.get('repeatedPassword').touched" id="span7">
@@ -93,8 +93,8 @@
                       <span id="span7">
                         Repeated password
                       </span>                                     
-                    </div>
-                    <button id="btn1" type="submit">Register</button>
+                    </div> -->
+                    <button id="btn1">Register as business user</button>
                 </div>
 
         </form>

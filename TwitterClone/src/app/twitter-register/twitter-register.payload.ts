@@ -1,10 +1,14 @@
 export interface TwitterRegisterPayload {
+    //id: number;
     name: string;
     surname: string;
-    sex: string;
-    age: number;
-    place: string;
     username: string;
     password: string;
-    repeatedPassword: string;
+    sex: string;
+    age: number;
+    town: string;
+    //email: string;
+    //firm: string;
+    //website: string;
+    //role: string;
 }
