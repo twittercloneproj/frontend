@@ -21,8 +21,11 @@
         <div class="col-md-6">
             <input type="text" [formControlName]="'name'" id="inp1" class="form-control" name="name" required
                 autofocus>
-            <span *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched" id="span1">
+            <span *ngIf="signupForm.get('name').errors?.['required'] && signupForm.get('name').touched" id="span1">
               Name is required
+            </span>
+            <span *ngIf="signupForm.get('name').errors?.['pattern']" id="span1">
+              Name cannot contain these characters. Try something else.
             </span>
             <span *ngIf="!signupForm.get('name').touched" id="span1">
               Name
@@ -34,8 +37,11 @@
         <div class="col-md-6">
           <input type="text" [formControlName]="'surname'" id="inp3" class="form-control" name="surname" required
               autofocus>
-          <span *ngIf="!signupForm.get('surname').valid && signupForm.get('surname').touched" id="span3">
+          <span *ngIf="signupForm.get('surname').errors?.['required'] && signupForm.get('surname').touched" id="span3">
             Surname is required
+          </span>
+          <span *ngIf="signupForm.get('surname').errors?.['pattern']" id="span3">
+            Surname cannot contain these characters. Try something else.
           </span>
           <span *ngIf="!signupForm.get('surname').touched" id="span3">
             Surname
@@ -47,8 +53,11 @@
         <div class="col-md-6">
           <input type="text" [formControlName]="'sex'" id="inp4" class="form-control" name="sex" required
               autofocus>
-          <span *ngIf="!signupForm.get('sex').valid && signupForm.get('sex').touched" id="span4">
+          <span *ngIf="signupForm.get('sex').errors?.['required'] && signupForm.get('sex').touched" id="span4">
             Sex is required
+          </span>
+          <span *ngIf="signupForm.get('sex').errors?.['pattern']" id="span4">
+            Sex cannot contain these characters. Try something else.
           </span>
           <span *ngIf="!signupForm.get('sex').touched" id="span4">
             Sex
@@ -73,8 +82,11 @@
             <div class="col-md-6">
               <input type="text" [formControlName]="'town'" id="inp6" class="form-control" name="town" required
                   autofocus>
-              <span *ngIf="!signupForm.get('town').valid && signupForm.get('town').touched" id="span6">
+              <span *ngIf="signupForm.get('town').errors?.['required'] && signupForm.get('town').touched" id="span6">
                 Place is required
+              </span>
+              <span *ngIf="signupForm.get('town').errors?.['pattern']" id="span6">
+                Place cannot contain these characters. Try something else.
               </span>
               <span *ngIf="!signupForm.get('town').touched" id="span6">
                 Place
@@ -86,8 +98,11 @@
             <div class="col-md-6">
               <input type="text" [formControlName]="'username'" id="inp7" class="form-control" name="username" required
                   autofocus>
-              <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched" id="span7">
+              <span *ngIf="signupForm.get('username').errors?.['required'] && signupForm.get('username').touched" id="span7">
                 Username is required
+              </span>
+              <span *ngIf="signupForm.get('username').errors?.['pattern']" id="span7">
+                Username cannot contain these characters. Try something else.
               </span>
               <span *ngIf="!signupForm.get('username').touched" id="span7">
                 Username
@@ -101,6 +116,9 @@
                   autofocus minlength="8">
               <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" id="span2">
                 Password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
+              </span>
+              <span *ngIf="signupForm.get('password').errors?.['forbiddenNames']" id="span2">
+                Password cannot contain these characters. Try something else.
               </span>
               <span *ngIf="!signupForm.get('password').touched" id="span2">
                 Password

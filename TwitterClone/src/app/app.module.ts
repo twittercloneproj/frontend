@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { PostTileComponent } from './shared/post-tile/post-tile.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
+import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
     HomeComponent,
     PostTileComponent,
     SideBarComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ForbiddenNameDirective
   ],
   imports: [
     BrowserModule,

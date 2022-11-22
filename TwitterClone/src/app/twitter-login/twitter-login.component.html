@@ -21,24 +21,30 @@
             <div class="col-md-6">
                 <input type="text" [formControlName]="'username'" id="inp1" class="form-control" name="username" required
                     autofocus>
-                <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched" id="span1">
+                <span *ngIf="loginForm.get('username').errors?.['required'] && loginForm.get('username').touched" id="span1">
                   Username is required
+                </span>
+                <span *ngIf="loginForm.get('username').errors?.['pattern']" id="span1">
+                  Username cannot contain these characters. Try something else.
                 </span>
                 <span *ngIf="!loginForm.get('username').touched" id="span1">
                   Username
                 </span>
                 <span id="span1">
                   Username
-                </span>                                     
+                </span>                          
               </div>
               <div class="col-md-6">
               <input type="password" [formControlName]="'password'" id="inp2" class="form-control" name="password" required
-                    autofocus minlength="8">
+                    autofocus>
                 <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" id="span2">
                   Password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
                 </span>
                 <span *ngIf="!loginForm.get('password').touched" id="span2">
                   Password
+                </span>
+                <span *ngIf="loginForm.get('password').errors?.['forbiddenNames']" id="span2">
+                  Password cannot contain these characters. Try something else.
                 </span>
                 <span id="span2">
                   Password

@@ -8,6 +8,9 @@
             <hr />
             <input type="text" [formControlName]="'text'" class="form-control" style="margin-top: 5px"
               placeholder="Text">
+              <span *ngIf="!createTweetForm.get('text').valid && createTweetForm.get('text').touched" id="span1">
+                Invalid text format.
+              </span> 
   
             <input type="text" class="form-control" [formControlName]="'user'" style="margin-top: 5px" placeholder="User">
             <span>

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CustomValidators } from './custom-validators';
 import { throwError } from 'rxjs';
 import { UserService } from '../shared/user.service';
+import { AbstractControl, ValidatorFn } from "@angular/forms";
 
 @Component({
   selector: 'app-twitter-register',
@@ -31,13 +32,13 @@ export class TwitterRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      surname: new FormControl('', Validators.required),
-      sex: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required),
-      town: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      name: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$"), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      surname: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$"), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      sex: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$"), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      age: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$"), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      town: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$"), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      username: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$"), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])])
     });
   }
 
@@ -57,4 +58,10 @@ export class TwitterRegisterComponent implements OnInit {
     })
   }
 
+}
+export function forbiddenNamesValidator(forbiddenNames: RegExp[]): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} | null => {
+      const forbidden = forbiddenNames.some(re => re.test(control.value));
+      return forbidden ? { 'forbiddenNames': {value: control.value} } : null;
+  };
 }

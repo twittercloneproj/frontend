@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AsyncValidator, AsyncValidatorFn } from '@angular/forms';
 import { LoginRequestPayload } from './login-request.payload';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
+import { AbstractControl, ValidatorFn } from "@angular/forms";
 
 @Component({
   selector: 'app-twitter-login',
   templateUrl: './twitter-login.component.html',
   styleUrls: ['./twitter-login.component.css']
 })
+
 export class TwitterLoginComponent implements OnInit {
 
   loginForm: FormGroup;
@@ -27,8 +29,8 @@ export class TwitterLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      username: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9 ]+$")]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])])
     });
 
   }
@@ -39,4 +41,17 @@ export class TwitterLoginComponent implements OnInit {
 
   }
 
+}
+
+export function forbiddenNameValidator(forbiddenName: RegExp): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} | null => {
+        const forbidden = forbiddenName.test(control.value);
+        return forbidden ? { 'forbiddenName': {value: control.value} } : null;
+    };
+}
+export function forbiddenNamesValidator(forbiddenNames: RegExp[]): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} | null => {
+      const forbidden = forbiddenNames.some(re => re.test(control.value));
+      return forbidden ? { 'forbiddenNames': {value: control.value} } : null;
+  };
 }
