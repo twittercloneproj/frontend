@@ -13,10 +13,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   signup(registerPayload: TwitterRegisterPayload): Observable<any> {
-    return this.http.post('https://localhost:8003/users/add', registerPayload);
+    return this.http.post('https://localhost:8000/api/auth/users/add', registerPayload);
   }
 
   signupBusiness(registerBusinessPayload: TwitterRegisterBusinessPayload): Observable<any> {
-    return this.http.post('https://localhost:8003/users/add', registerBusinessPayload);
+    return this.http.post('https://localhost:8000/api/auth/users/add', registerBusinessPayload);
   }
 }

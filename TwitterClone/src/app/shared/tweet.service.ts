@@ -12,10 +12,10 @@ export class TweetService {
   constructor(private http: HttpClient) { }
 
   getAllTweets(): Observable<Array<TweetModel>> {
-    return this.http.get<Array<TweetModel>>('http://localhost:8080/all');
+    return this.http.get<Array<TweetModel>>('https://localhost:8000/api/tweets/all');
   }
 
   createTweet(tweetPayload: CreateTweetPayload): Observable<any> {
-    return this.http.post('http://localhost:8080/tweets', tweetPayload);
+    return this.http.post('https://localhost:8000/api/tweets/tweets', tweetPayload);
   }
 }
