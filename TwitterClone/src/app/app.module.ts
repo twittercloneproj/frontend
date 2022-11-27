@@ -20,6 +20,7 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotFormComponent } from './forgot-form/forgot-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     SideBarComponent,
     CreatePostComponent,
     ForbiddenNameDirective,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ForgotFormComponent
   ],
   imports: [
     BrowserModule,
