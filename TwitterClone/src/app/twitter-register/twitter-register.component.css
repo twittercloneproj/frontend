@@ -9,6 +9,17 @@ body {
     width: 100%;
 }
 
+#recaptcha{
+    width: 32%;
+    position: absolute;
+    top: 580px;
+    right: 472px;
+    padding: 1px;
+    height: 26px;
+    border: none;
+    padding-top: 18px;
+}
+
 #logo {
     width: 3%;
     height: 46px;

@@ -19,6 +19,9 @@ import { PostTileComponent } from './shared/post-tile/post-tile.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,9 +46,17 @@ import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptcha.siteKey,
+      } as RecaptchaSettings,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

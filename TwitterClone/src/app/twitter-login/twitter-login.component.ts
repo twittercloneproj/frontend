@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, AsyncValidator, AsyncValidatorFn } from '@angular/forms';
 import { LoginRequestPayload } from './login-request.payload';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
-import { AbstractControl, ValidatorFn } from "@angular/forms";
+import { AbstractControl, ValidatorFn, FormBuilder } from "@angular/forms";
+import { RecaptchaModule } from 'ng-recaptcha';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-twitter-login',
@@ -14,13 +16,28 @@ import { AbstractControl, ValidatorFn } from "@angular/forms";
 
 export class TwitterLoginComponent implements OnInit {
 
+
+  token: string|undefined;
+
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
+
+    console.debug(`Token [${this.token}] generated`);
+  }
+
   loginForm: FormGroup;
   loginRequestPayload: LoginRequestPayload;
   registerSuccessMessage: string;
   isError: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private router: Router, private toastr: ToastrService) {
+    private router: Router, private toastr: ToastrService, private formBuilder: FormBuilder) {
+      this.token = undefined;
     this.loginRequestPayload = {
       username: '',
       password: ''
@@ -49,6 +66,7 @@ export function forbiddenNameValidator(forbiddenName: RegExp): ValidatorFn {
         return forbidden ? { 'forbiddenName': {value: control.value} } : null;
     };
 }
+
 export function forbiddenNamesValidator(forbiddenNames: RegExp[]): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {
       const forbidden = forbiddenNames.some(re => re.test(control.value));

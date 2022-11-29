@@ -3,6 +3,22 @@ body {
     padding: 0px;
 }
 
+#recaptcha{
+    width: 32%;
+    position: absolute;
+    top: 270px;
+    right: 472px;
+    padding: 10px;
+    height: 26px;
+    border: none;
+    padding-top: 18px;
+}
+
+re-captcha.is-invalid > div {
+    border: 1px solid #dc3545 !important;
+    border-radius: 0.2rem;
+  }
+
 #container {
     text-align: center;
     margin: auto;
@@ -62,7 +78,7 @@ body {
 #inp3 {
     width: 32%;
     position: absolute;
-    top: 210px;
+    top: 250px;
     left: 770px;
     padding: 10px;
     opacity: 0.5;
@@ -83,7 +99,7 @@ body {
 #btn1 {
     width: 31%;
     position: absolute;
-    top: 270px;
+    top: 390px;
     left: 472px;
     border: none;
     background-color: #1da1f2;
@@ -96,7 +112,7 @@ body {
 
 #link {
     position: absolute;
-    top: 330px;
+    top: 460px;
     left: 588px;
 }
 
@@ -111,7 +127,7 @@ body {
 
 #business {
     position: absolute;
-    top:350px;
+    top:440px;
     left: 630px;
 }
 

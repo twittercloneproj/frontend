@@ -6,6 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
 import { UserService } from '../shared/user.service';
 import { AbstractControl, ValidatorFn } from "@angular/forms";
+import { RecaptchaModule } from 'ng-recaptcha';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-twitter-register-business',
@@ -14,10 +16,24 @@ import { AbstractControl, ValidatorFn } from "@angular/forms";
 })
 export class TwitterRegisterBusinessComponent implements OnInit {
 
+  token: string|undefined;
+
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
+
+    console.debug(`Token [${this.token}] generated`);
+  }
+
   twitterRegisterBusinessPayload: TwitterRegisterBusinessPayload;
   signupForm: FormGroup;
 
   constructor(private router: Router, private toastr: ToastrService, private userService: UserService) {
+    this.token = undefined;
     this.twitterRegisterBusinessPayload = {
       firm: '',
       email: '',

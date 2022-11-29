@@ -140,6 +140,12 @@
                 Repeated password
               </span>                                     
             </div> -->
+            <div class="col-md-6">
+              <re-captcha  id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+            <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+              <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+            </div>
+              </div>
             <button id="btn1">Register</button>
         </div>
 

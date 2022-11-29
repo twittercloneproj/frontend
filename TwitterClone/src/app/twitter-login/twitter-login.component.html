@@ -50,10 +50,20 @@
                   Password
                 </span> 
               </div>
-              <button id="btn1" type="submit">Login</button>
+              
+             
+              <button id="btn1" type="submit" >Login</button>
         </div>
-
         </form>
+        <div class="col-md-6">
+          <re-captcha  id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+          <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+        </div>
+          </div>
+        
+
+        
 
         <div id="link">
             <a href="#" >Forgot password?   </a>
@@ -66,6 +76,8 @@
             <a href="password">Password</a>
       </div>
     </div>
+
+    
 </body>
 
 </html>

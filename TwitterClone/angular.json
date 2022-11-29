@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "TwitterClone"
+  "defaultProject": "TwitterClone",
+  "cli": {
+    "analytics": false
+  }
 }
