@@ -19,6 +19,12 @@ body {
     padding-top: 18px;
 }
 
+button:disabled{
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+}
+
 #logo {
     width: 3%;
     height: 46px;

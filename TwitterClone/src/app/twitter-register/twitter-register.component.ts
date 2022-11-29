@@ -19,12 +19,19 @@ export class TwitterRegisterComponent implements OnInit {
 
   blacklist: string = "apple123#"
 
+  
   isBlacklisted(password: string){
     if(this.blacklist.includes(password.toLocaleLowerCase())) return true;
     else return false;
   }
 
   token: string|undefined;
+
+  public captchaResolved : boolean = false;
+
+  checkCaptcha(captchaResponse : string) {
+    this.captchaResolved = (captchaResponse && captchaResponse.length > 0) ? true : false
+}
 
   public send(form: NgForm): void {
     if (form.invalid) {
@@ -64,6 +71,8 @@ export class TwitterRegisterComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])])
     });
   }
+
+  
 
   signup() {
     this.twitterRegisterPayload.name = this.signupForm.get('name')?.value;
