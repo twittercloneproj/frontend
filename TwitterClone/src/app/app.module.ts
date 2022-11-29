@@ -20,8 +20,9 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
-
 import { environment } from '../environments/environment';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotFormComponent } from './forgot-form/forgot-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { environment } from '../environments/environment';
     PostTileComponent,
     SideBarComponent,
     CreatePostComponent,
-    ForbiddenNameDirective
+    ForbiddenNameDirective,
+    ForgotPasswordComponent,
+    ForgotFormComponent
   ],
   imports: [
     BrowserModule,

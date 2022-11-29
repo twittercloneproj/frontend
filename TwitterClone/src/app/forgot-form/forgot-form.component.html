@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Register</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="para">Please enter your existing username and new password</p>
+
+        <div class="imgContainer">
+            <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
+        </div>
+
+        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+        <div id="inpDiv">
+            <div class="col-md-6">
+              <input type="text" [formControlName]="'username'" id="inp1" class="form-control" name="username" required
+                  autofocus>
+              <span *ngIf="signupForm.get('username').errors?.['required'] && signupForm.get('username').touched" id="span1">
+                Username is required
+              </span>
+              <span *ngIf="signupForm.get('username').errors?.['pattern']" id="span1">
+                Username cannot contain these characters. Try something else.
+              </span>
+              <span *ngIf="!signupForm.get('username').touched" id="span1">
+                Username
+              </span>
+              <span id="span1">
+                Username
+              </span>                                     
+            </div>
+            <div class="col-md-6">
+            <input type="password" [formControlName]="'password'" id="inp3" class="form-control" name="password" required
+                  autofocus minlength="8">
+              <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" id="span3">
+                Password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
+              </span>
+              <span *ngIf="signupForm.get('password').errors?.['forbiddenNames']" id="span3">
+                Password cannot contain these characters. Try something else.
+              </span>
+              <span *ngIf="!signupForm.get('password').touched" id="span3">
+                Password
+              </span>
+              <span id="span3">
+                Password
+              </span> 
+            </div>
+            <!--<div class="col-md-6">
+              <input type="password" [formControlName]="'repeatedPassword'" id="inp8" class="form-control" name="repeatedPassword" required
+                  autofocus minlength="8">
+              <span *ngIf="!signupForm.get('repeatedPassword').valid && signupForm.get('repeatedPassword').touched" id="span8">
+                Repeated password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
+              </span>
+              <span *ngIf="!signupForm.get('repeatedPassword').touched" id="span8">
+                Repeated password
+              </span>
+              <span id="span8">
+                Repeated password
+              </span>                                     
+            </div> -->
+            <button id="btn1">Ok</button>
+        </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
