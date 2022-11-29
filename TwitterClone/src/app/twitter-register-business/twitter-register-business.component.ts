@@ -16,6 +16,13 @@ import { NgForm } from '@angular/forms';
 })
 export class TwitterRegisterBusinessComponent implements OnInit {
 
+  blacklist: string = "apple123#"
+
+  isBlacklisted(password: string){
+    if(this.blacklist.includes(password.toLocaleLowerCase())) return true;
+    else return false;
+  }
+
   token: string|undefined;
 
   public send(form: NgForm): void {

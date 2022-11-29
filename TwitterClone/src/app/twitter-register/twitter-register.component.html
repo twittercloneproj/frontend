@@ -120,6 +120,10 @@
               <span *ngIf="signupForm.get('password').errors?.['forbiddenNames']" id="span2">
                 Password cannot contain these characters. Try something else.
               </span>
+              <span *ngIf="isBlacklisted(signupForm.get('password')?.value) && signupForm.get('password').touched && signupForm.get('password')?.value!=''" id="span2">
+                <BR>
+                Password is blacklisted. Try a new password.
+              </span>
               <span *ngIf="!signupForm.get('password').touched" id="span2">
                 Password
               </span>
