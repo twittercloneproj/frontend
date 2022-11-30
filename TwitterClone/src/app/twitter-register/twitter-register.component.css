@@ -252,6 +252,12 @@ body {
     cursor: pointer;
 }
 
+button:disabled{
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+}
+
 #link {
     position: absolute;
     top: 730px;

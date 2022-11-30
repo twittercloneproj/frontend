@@ -97,12 +97,7 @@
                       <span id="span6">
                         Password
                       </span> 
-                      <div class="col-md-6">
-                        <re-captcha  id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
-                      <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
-                        <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
-                      </div>
-                        </div>
+                      
                     <!--<div class="col-md-6">
                       <input type="password" [formControlName]="'repeatedPassword'" id="inp7" class="form-control" name="repeatedPassword" required
                           autofocus minlength="8">
@@ -116,10 +111,16 @@
                         Repeated password
                       </span>                                     
                     </div> -->
-                    <button id="btn1">Register as business user</button>
+                    <button [disabled]="!captchaResolved" class="btn btn-primary" id="btn1">Register as business user</button>
                 </div>
 
         </form>
+        <div class="col-md-6">
+          <re-captcha (resolved)="checkCaptcha($event)" id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+          <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+        </div>
+          </div>
 
         <div id="link">
 

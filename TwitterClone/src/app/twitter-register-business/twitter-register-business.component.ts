@@ -16,7 +16,13 @@ import { NgForm } from '@angular/forms';
 })
 export class TwitterRegisterBusinessComponent implements OnInit {
 
-  blacklist = "apple123#";
+  public captchaResolved : boolean = false;
+
+  checkCaptcha(captchaResponse : string) {
+    this.captchaResolved = (captchaResponse && captchaResponse.length > 0) ? true : false
+}
+
+  blacklist: string = "apple123#"
 
   isBlacklisted(password: string){
     if(this.blacklist.includes(password.toLocaleLowerCase())) return true;

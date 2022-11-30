@@ -16,8 +16,16 @@ import { NgForm } from '@angular/forms';
 
 export class TwitterLoginComponent implements OnInit {
 
+  
+
 
   token: string|undefined;
+
+  public captchaResolved : boolean = false;
+
+  checkCaptcha(captchaResponse : string) {
+    this.captchaResolved = (captchaResponse && captchaResponse.length > 0) ? true : false
+}
 
   public send(form: NgForm): void {
     if (form.invalid) {
