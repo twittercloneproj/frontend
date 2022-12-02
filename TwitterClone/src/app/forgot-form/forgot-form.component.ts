@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
 import { UserService } from '../shared/user.service';
 import { ForgotFormPayload } from './forgot-form.payload';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-form',
@@ -12,6 +13,25 @@ import { ForgotFormPayload } from './forgot-form.payload';
   styleUrls: ['./forgot-form.component.css']
 })
 export class ForgotFormComponent implements OnInit {
+
+  token: string|undefined;
+
+  public captchaResolved : boolean = false;
+
+  checkCaptcha(captchaResponse : string) {
+    this.captchaResolved = (captchaResponse && captchaResponse.length > 0) ? true : false
+  }
+
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
+
+    console.debug(`Token [${this.token}] generated`);
+  }
 
   forgotFormPayload: ForgotFormPayload;
   signupForm: FormGroup;
@@ -47,5 +67,12 @@ export function forbiddenNamesValidator(forbiddenNames: RegExp[]): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {
       const forbidden = forbiddenNames.some(re => re.test(control.value));
       return forbidden ? { 'forbiddenNames': {value: control.value} } : null;
+  };
+}
+
+export function forbiddenNameValidator(forbiddenName: RegExp): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} | null => {
+      const forbidden = forbiddenName.test(control.value);
+      return forbidden ? { 'forbiddenName': {value: control.value} } : null;
   };
 }
