@@ -9,6 +9,17 @@ body {
     width: 100%;
 }
 
+#recaptcha{
+    width: 32%;
+    position: absolute;
+    top: 320px;
+    right: 472px;
+    padding: 1px;
+    height: 26px;
+    border: none;
+    padding-top: 18px;
+}
+
 #logo {
     width: 3%;
     height: 46px;
@@ -230,7 +241,7 @@ body {
 #btn1 {
     width: 31%;
     position: absolute;
-    top: 300px;
+    top: 450px;
     left: 472px;
     border: none;
     background-color: #1da1f2;
@@ -275,4 +286,10 @@ body {
 
 #password {
     top: 500px;
+}
+
+button:disabled{
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
 }
