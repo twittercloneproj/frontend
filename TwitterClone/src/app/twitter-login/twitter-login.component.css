@@ -7,7 +7,7 @@ body {
     width: 32%;
     position: absolute;
     top: 270px;
-    right: 472px;
+    right: 445px;
     padding: 10px;
     height: 26px;
     border: none;
@@ -134,7 +134,7 @@ re-captcha.is-invalid > div {
 #business {
     position: absolute;
     top:440px;
-    left: 630px;
+    left: 37%;
 }
 
 #business a {

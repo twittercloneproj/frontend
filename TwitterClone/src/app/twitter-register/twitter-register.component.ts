@@ -17,7 +17,7 @@ import { NgForm } from '@angular/forms';
 })
 export class TwitterRegisterComponent implements OnInit {
 
-  blacklist: string = "apple123#"
+  blacklist = "apple123#";
 
   
   isBlacklisted(password: string){
@@ -91,6 +91,7 @@ export class TwitterRegisterComponent implements OnInit {
   }
 
 }
+
 export function forbiddenNamesValidator(forbiddenNames: RegExp[]): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {
       const forbidden = forbiddenNames.some(re => re.test(control.value));
