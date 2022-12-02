@@ -16,6 +16,12 @@ import { NgForm } from '@angular/forms';
 
 export class TwitterLoginComponent implements OnInit {
 
+  register = 'register';
+  business = 'register-business';
+  forgot = 'forgot-form';
+  home = 'home';
+  password = 'password';
+
   
 
 

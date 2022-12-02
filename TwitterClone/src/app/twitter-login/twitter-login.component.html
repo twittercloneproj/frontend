@@ -15,6 +15,8 @@
             <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
         </div>
 
+        
+
         <form [formGroup]="loginForm" (ngSubmit)="login()">
 
         <div id="inpDiv">
@@ -66,18 +68,15 @@
         
 
         <div id="link">
-            <a href="forgot-form" >Forgot password?   </a>
-            <a href="register">Sign up for Twitter</a>
+            <a [href]="forgot" >Forgot password?   </a>
+            <a [href]="register">Sign up for Twitter</a>
         </div>
 
         <div id="business">
-            <a href="register-business">Sign up as business user      </a>
-            <a href="home">Home feed</a>
-            <a href="password">Password</a>
+            <a [href]="business">Sign up as business user      </a>
+            <a [href]="home">Home feed</a>
+            <a [href]="password">Password</a>
       </div>
     </div>
-
-    
 </body>
-
 </html>

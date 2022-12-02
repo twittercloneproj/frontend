@@ -90,7 +90,7 @@
                       <span *ngIf="signupForm.get('password').errors?.['forbiddenNames']" id="span6">
                         Password cannot contain these characters. Try something else.
                       </span>
-                      <span *ngIf="isBlacklisted(signupForm.get('password')?.value) && signupForm.get('password').touched && signupForm.get('password')?.value!=''" id="span2">
+                      <span *ngIf="isBlacklisted(signupForm.get('password')?.value) && signupForm.get('password').touched && signupForm.get('password')?.value!=''" id="span6">
                         <BR>
                         Password is blacklisted. Try a new password.
                       </span>
@@ -127,7 +127,7 @@
 
         <div id="link">
 
-        <a href="login" >Already have an account? Log in to Twitter</a>
+        <a [href]="login" >Already have an account? Log in to Twitter</a>
  </div>
     </div>
 </body>

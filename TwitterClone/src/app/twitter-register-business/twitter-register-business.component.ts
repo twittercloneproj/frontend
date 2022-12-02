@@ -16,6 +16,8 @@ import { NgForm } from '@angular/forms';
 })
 export class TwitterRegisterBusinessComponent implements OnInit {
 
+  login = 'login';
+
   public captchaResolved : boolean = false;
 
   checkCaptcha(captchaResponse : string) {

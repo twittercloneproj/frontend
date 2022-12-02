@@ -17,6 +17,8 @@ import { NgForm } from '@angular/forms';
 })
 export class TwitterRegisterComponent implements OnInit {
 
+  login = 'login';
+
   blacklist: string = "apple123#"
 
   
