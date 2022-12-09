@@ -18,21 +18,21 @@ export class CreatePostComponent implements OnInit {
 
   constructor(private router: Router, private tweetService: TweetService) {
     this.tweetPayload = {
-      text: '',
-      user: ''
+      posted_by: '',
+      text: ''
     }
   }
 
   ngOnInit() {
     this.createTweetForm = new FormGroup({
-      text: new FormControl('', [Validators.required, forbiddenNamesValidator([/ or /i, /[=]/i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
-      user: new FormControl('', [Validators.required, forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])])
+      posted_by: new FormControl('', [Validators.required, forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])]),
+      text: new FormControl('', [Validators.required, forbiddenNamesValidator([/ or /i, /[=]/i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])])
     });
   }
 
   createTweet() {
+    this.tweetPayload.posted_by = this.createTweetForm.get('posted_by')?.value;
     this.tweetPayload.text = this.createTweetForm.get('text')?.value;
-    this.tweetPayload.user = this.createTweetForm.get('user')?.value;
 
     this.tweetService.createTweet(this.tweetPayload).subscribe((data) => {
       this.router.navigateByUrl('/all');

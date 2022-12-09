@@ -1,5 +1,5 @@
 export class TweetModel {
     id: number;
     text: string;
-    user: string;
+    posted_by: string;
 }
