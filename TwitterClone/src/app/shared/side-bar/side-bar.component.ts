@@ -17,4 +17,8 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/tweets');
   }
 
+  goToProfile() {
+    this.router.navigateByUrl('/user-profile');
+  }
+
 }

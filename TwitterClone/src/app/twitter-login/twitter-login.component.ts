@@ -70,6 +70,8 @@ export class TwitterLoginComponent implements OnInit {
     this.loginRequestPayload.username = this.loginForm.get('username')?.value;
     this.loginRequestPayload.password = this.loginForm.get('password')?.value;
 
+    this.router.navigateByUrl('/all');
+
   }
 
 }

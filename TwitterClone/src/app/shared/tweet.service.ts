@@ -18,4 +18,12 @@ export class TweetService {
   createTweet(tweetPayload: CreateTweetPayload): Observable<any> {
     return this.http.post('https://localhost:8000/api/tweets/tweets', tweetPayload);
   }
+
+  getTweet(id: number): Observable<TweetModel> {
+    return this.http.get<TweetModel>('https://localhost:8080/api/tweets/' + id);
+  }
+
+  getAllTweetsByUser(name: string): Observable<TweetModel[]> {
+    return this.http.get<TweetModel[]>('https://localhost:8080/api/tweets/by-user/' + name);
+  }
 }

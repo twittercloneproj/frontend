@@ -23,6 +23,9 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
 import { environment } from '../environments/environment';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ForgotFormComponent } from './forgot-form/forgot-form.component';
+import { VoteButtonComponent } from './vote-button/vote-button.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserTileComponent } from './user-tile/user-tile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { ForgotFormComponent } from './forgot-form/forgot-form.component';
     CreatePostComponent,
     ForbiddenNameDirective,
     ForgotPasswordComponent,
-    ForgotFormComponent
+    ForgotFormComponent,
+    VoteButtonComponent,
+    UserProfileComponent,
+    UserTileComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
 import { TwitterLoginComponent } from './twitter-login/twitter-login.component';
 import { TwitterRegisterBusinessComponent } from './twitter-register-business/twitter-register-business.component';
 import { TwitterRegisterComponent } from './twitter-register/twitter-register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: 'all', component: HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'password', component: PasswordComponent},
   { path: 'tweets', component: CreatePostComponent},
   {path: 'forgot', component: ForgotPasswordComponent},
-  {path: 'forgot-form', component: ForgotFormComponent}
+  {path: 'forgot-form', component: ForgotFormComponent},
+  {path: 'user-profile', component: UserProfileComponent}
 ];
 
 @NgModule({

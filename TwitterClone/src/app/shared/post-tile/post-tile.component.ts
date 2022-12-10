@@ -18,4 +18,8 @@ export class PostTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  LikeTweet(id: number): void {
+    this.router.navigateByUrl('/view-tweet/' + id);
+  }
+
 }
