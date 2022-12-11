@@ -26,6 +26,7 @@ import { ForgotFormComponent } from './forgot-form/forgot-form.component';
 import { VoteButtonComponent } from './vote-button/vote-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserTileComponent } from './user-tile/user-tile.component';
+//import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,11 @@ import { UserTileComponent } from './user-tile/user-tile.component';
         siteKey: environment.recaptcha.siteKey,
       } as RecaptchaSettings,
     },
+    //{
+    //  provide: HTTP_INTERCEPTORS,
+    //  useClass: TokenInterceptor,
+    //  multi: true
+    //}
   ],
   bootstrap: [AppComponent]
 })

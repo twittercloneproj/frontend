@@ -7,6 +7,7 @@ import { throwError } from 'rxjs';
 import { AbstractControl, ValidatorFn, FormBuilder } from "@angular/forms";
 import { RecaptchaModule } from 'ng-recaptcha';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-twitter-login',
@@ -21,9 +22,6 @@ export class TwitterLoginComponent implements OnInit {
   forgot = 'forgot-form';
   home = 'home';
   password = 'password';
-
-  
-
 
   token: string|undefined;
 
@@ -50,7 +48,8 @@ export class TwitterLoginComponent implements OnInit {
   isError: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private router: Router, private toastr: ToastrService, private formBuilder: FormBuilder) {
+    private router: Router, private toastr: ToastrService, private formBuilder: FormBuilder,
+    private authService: AuthService) {
       this.token = undefined;
     this.loginRequestPayload = {
       username: '',
@@ -64,6 +63,15 @@ export class TwitterLoginComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/), forbiddenNamesValidator([/ or /i, / <script> /i, /<script>/i, / > /i, />/i, / >/i, /> /i, / < /i, /</i, / </i, /< /i])])
     });
 
+    // this.activatedRoute.queryParams
+    //   .subscribe(params => {
+    //     if (params.registered !== undefined && params.registered === 'true') {
+    //       this.toastr.success('Signup Successful');
+    //       this.registerSuccessMessage = 'Please Check your inbox for activation email '
+    //         + 'activate your account before you Login!';
+    //     }
+    // });
+
   }
 
   login() {
@@ -71,6 +79,15 @@ export class TwitterLoginComponent implements OnInit {
     this.loginRequestPayload.password = this.loginForm.get('password')?.value;
 
     this.router.navigateByUrl('/all');
+
+    // this.authService.login(this.loginRequestPayload).subscribe(data => {
+    //   this.isError = false;
+    //   this.router.navigateByUrl('');
+    //   this.toastr.success('Login Successful');
+    // }, error => {
+    //   this.isError = true;
+    //   throwError(error);
+    // });
 
   }
 

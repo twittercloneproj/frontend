@@ -21,6 +21,7 @@
     "@angular/router": "~13.3.0",
     "bootstrap": "^5.2.2",
     "ng-recaptcha": "^8.0.0",
+    "ngx-webstorage": "^11.1.1",
     "password-blacklist": "^1.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
