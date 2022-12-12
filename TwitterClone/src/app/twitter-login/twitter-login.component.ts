@@ -75,10 +75,17 @@ export class TwitterLoginComponent implements OnInit {
   }
 
   login() {
+
+
     this.loginRequestPayload.username = this.loginForm.get('username')?.value;
     this.loginRequestPayload.password = this.loginForm.get('password')?.value;
 
-    this.router.navigateByUrl('/all');
+    this.authService.login(this.loginRequestPayload).subscribe((data) => {
+      this.router.navigateByUrl('/all');
+    }, error => {
+      throwError(error);
+    })
+  }
 
     // this.authService.login(this.loginRequestPayload).subscribe(data => {
     //   this.isError = false;
@@ -91,7 +98,6 @@ export class TwitterLoginComponent implements OnInit {
 
   }
 
-}
 
 export function forbiddenNameValidator(forbiddenName: RegExp): ValidatorFn {
     return (control: AbstractControl): {[key: string]: any} | null => {
