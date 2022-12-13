@@ -18,7 +18,6 @@ export class CreatePostComponent implements OnInit {
 
   constructor(private router: Router, private tweetService: TweetService) {
     this.tweetPayload = {
-      posted_by: '',
       text: ''
     }
   }
@@ -31,7 +30,7 @@ export class CreatePostComponent implements OnInit {
   }
 
   createTweet() {
-    this.tweetPayload.posted_by = this.createTweetForm.get('posted_by')?.value;
+  
     this.tweetPayload.text = this.createTweetForm.get('text')?.value;
 
     this.tweetService.createTweet(this.tweetPayload).subscribe((data) => {

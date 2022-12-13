@@ -11,9 +11,7 @@
               <span *ngIf="!createTweetForm.get('text').valid && createTweetForm.get('text').touched" id="span1">
                 Invalid text format.
               </span> 
-  
-            <input type="text" class="form-control" [formControlName]="'posted_by'" style="margin-top: 5px" placeholder="User">
-            <span>
+              <span>
               <div style="margin-top: 5px" class="float-right">
                 <button (click)="discardTweet()" class="btnDiscard">Discard</button>
                 <button class="btnCreatePost">Tweet</button>

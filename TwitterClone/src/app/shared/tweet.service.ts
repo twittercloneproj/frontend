@@ -1,22 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TweetModel } from './tweet-model';
 import { Observable } from 'rxjs';
 import { CreateTweetPayload } from '../post/create-post/create-tweet.payload';
+import { AuthService } from '../auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TweetService {
 
-  constructor(private http: HttpClient) { }
+  token;
+  text = ""
+  constructor(private http: HttpClient, private auth: AuthService) { }
 
   getAllTweets(): Observable<Array<TweetModel>> {
     return this.http.get<Array<TweetModel>>('https://localhost:8000/api/tweets/all');
   }
 
   createTweet(tweetPayload: CreateTweetPayload): Observable<any> {
-    return this.http.post('https://localhost:8000/api/tweets/tweets', tweetPayload);
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post('https://localhost:8000/api/tweets/tweets', tweetPayload , options);
   }
 
   getTweet(id: number): Observable<TweetModel> {

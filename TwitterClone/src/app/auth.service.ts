@@ -28,16 +28,11 @@ export class AuthService {
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<any>{
-    const loginHeaders = new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    });
-
-    return this.http.post<string>('https://localhost:8000/api/auth/users/login', JSON.stringify(loginRequestPayload),{headers:loginHeaders})
+    return this.http.post<string>('https://localhost:8000/api/auth/users/login', JSON.stringify(loginRequestPayload))
     .pipe(map((res) => {
       console.log('Login success');
       localStorage.setItem("jwt", res)
+      console.log(this.getUserID() +' '+this.getUsername() + ' ' +this.getRole() + ' ' + this.getExpiration());
     }));
   }
 
@@ -55,6 +50,15 @@ export class AuthService {
   getToken() {
     let token = localStorage.getItem('jwt');
     return token
+  }
+
+  getUserID(): string {
+    let token = this.parseToken();
+
+    if (token) {
+      return this.parseToken()['id']
+    }
+    return "";
   }
 
   getUsername(): string {
