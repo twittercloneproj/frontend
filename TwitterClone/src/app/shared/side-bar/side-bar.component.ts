@@ -21,4 +21,12 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/user-profile');
   }
 
+  changePassword() {
+    this.router.navigateByUrl('/forgot-form');
+  }
+
+  goToProfileBusiness() {
+    this.router.navigateByUrl('/user-profilebusiness');
+  }
+
 }

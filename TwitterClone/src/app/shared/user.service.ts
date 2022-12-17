@@ -6,6 +6,7 @@ import { TwitterRegisterPayload } from '../twitter-register/twitter-register.pay
 import { TwitterRegisterBusinessPayload } from '../twitter-register-business/twitter-register-business.payload';
 import { ForgotFormPayload } from '../forgot-form/forgot-form.payload';
 import { ProfileModel } from './profile-model';
+import { ProfileModelBusiness } from './profile-modelbusiness';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,9 @@ export class UserService {
 
   getUser(): Observable<Array<ProfileModel>> {
     return this.http.get<Array<ProfileModel>>('https://localhost:8000/api/profile/about/pera');
+  }
+
+  getUserBusiness(): Observable<Array<ProfileModelBusiness>> {
+    return this.http.get<Array<ProfileModelBusiness>>('https://localhost:8000/api/profile/about/zoran');
   }
 }

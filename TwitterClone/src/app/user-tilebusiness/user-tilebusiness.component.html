@@ -1,0 +1,23 @@
+<!-- Display Posts-->
+<div class="row post" *ngFor="let user of users">
+    <!-- <app-vote-button [tweet]="tweet"></app-vote-button> -->
+    <!-- Section to Display Post Information-->
+    <div class="col-md-11">
+      <span class="subreddit-info">
+        <span class="subreddit-text"><a class="posturl" routerLink="login">{{user.username}}</a></span>
+      </span>
+      <hr />
+      <div>
+        <!--<p class="post-posted_By" [innerHtml]="tweet.posted_by"></p> -->
+        <p class="post-text" [innerHtml]="user.username"></p>
+        <p class="post-text" [innerHtml]="user.password"></p>
+        <p class="post-text" [innerHtml]="user.firm"></p>
+        <p class="post-text" [innerHtml]="user.email"></p>
+        <p class="post-text" [innerHtml]="user.website"></p>
+        <p class="post-text" [innerHtml]="user.role"></p>
+      </div>
+      <hr />
+      <span>
+      </span>
+    </div>
+</div>

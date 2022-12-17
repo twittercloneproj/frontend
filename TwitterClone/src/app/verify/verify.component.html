@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter verify account</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="para">Verifying your new Twitter account</p>
+        <div class="imgContainer">
+            <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
+        </div>
+
+        <form [formGroup]="verifyForm" (ngSubmit)="verify()">
+
+        <div id="inpDiv">
+            <div class="col-md-6">
+                <input type="text" [formControlName]="'verify'" id="inp1" class="form-control" name="verify" required
+                    autofocus>
+                    <span *ngIf="!verifyForm.get('verify').valid && verifyForm.get('verify').touched" id="span1">
+                        Verificaiton code is required. Verification code is at least 6 characters long
+                    </span>
+                    <span *ngIf="!verifyForm.get('verify').touched" id="span1">
+                        Verify
+                    </span>
+                    <span *ngIf="verifyForm.get('verify').errors?.['forbiddenNames']" id="span1">
+                        Verification code cannot contain these characters. Try something else.
+                    </span>
+                    <span id="span1">
+                        Verify
+                    </span>                         
+              </div>
+             
+              <button [disabled]="!captchaResolved" class="btn btn-primary" id="btn1" type="submit" >Verify your new account</button>
+        </div>
+        </form>
+        <div class="col-md-6">
+          <re-captcha (resolved)="checkCaptcha($event)" id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+          <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+        </div>
+          </div>
+    </div>
+</body>
+</html>

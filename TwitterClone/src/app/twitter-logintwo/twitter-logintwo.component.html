@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Login</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="para">Log in to Twitter</p>
+        <div class="imgContainer">
+            <img src="/assets/TwitterLogo.png" alt="not loaded" id="logo">
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <div id="inpDiv">
+            <div class="col-md-6">
+                <input type="text" [formControlName]="'username'" id="inp1" class="form-control" name="username" required
+                    autofocus>
+                <span *ngIf="loginForm.get('username').errors?.['required'] && loginForm.get('username').touched" id="span1">
+                  Username is required
+                </span>
+                <span *ngIf="loginForm.get('username').errors?.['pattern']" id="span1">
+                  Username cannot contain these characters. Try something else.
+                </span>
+                <span *ngIf="!loginForm.get('username').touched" id="span1">
+                  Username
+                </span>
+                <span id="span1">
+                  Username
+                </span>                          
+              </div>
+              <div class="col-md-6">
+              <input type="password" [formControlName]="'password'" id="inp2" class="form-control" name="password" required
+                    autofocus>
+                <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" id="span2">
+                  Password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
+                </span>
+                <span *ngIf="!loginForm.get('password').touched" id="span2">
+                  Password
+                </span>
+                <span *ngIf="loginForm.get('password').errors?.['forbiddenNames']" id="span2">
+                  Password cannot contain these characters. Try something else.
+                </span>
+                <span id="span2">
+                  Password
+                </span> 
+              </div>
+              
+             
+              <button [disabled]="!captchaResolved" class="btn btn-primary" id="btn1" type="submit" >Login</button>
+        </div>
+        </form>
+        <div class="col-md-6">
+          <re-captcha (resolved)="checkCaptcha($event)" id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+          <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+        </div>
+          </div>
+        
+
+        
+
+        <div id="link">
+            <a [href]="forgot" >Forgot password?   </a>
+            <a [href]="register">Sign up for Twitter</a>
+            <!--<a href="forgot-form" >Forgot password?   </a>
+            <a href="password">Password</a> -->
+        </div>
+
+        <div id="business">
+            <a [href]="business">Sign up as business user      </a>
+            <!--<a [href]="home">Home feed</a>
+            <a [href]="password">Password</a>  -->
+      </div>
+    </div>
+</body>
+</html>

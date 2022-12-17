@@ -26,6 +26,10 @@ import { ForgotFormComponent } from './forgot-form/forgot-form.component';
 import { VoteButtonComponent } from './vote-button/vote-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserTileComponent } from './user-tile/user-tile.component';
+import { VerifyComponent } from './verify/verify.component';
+import { TwitterLogintwoComponent } from './twitter-logintwo/twitter-logintwo.component';
+import { UserProfilebusinessComponent } from './user-profilebusiness/user-profilebusiness.component';
+import { UserTilebusinessComponent } from './user-tilebusiness/user-tilebusiness.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -48,7 +52,11 @@ import { UserTileComponent } from './user-tile/user-tile.component';
     ForgotFormComponent,
     VoteButtonComponent,
     UserProfileComponent,
-    UserTileComponent
+    UserTileComponent,
+    VerifyComponent,
+    TwitterLogintwoComponent,
+    UserProfilebusinessComponent,
+    UserTilebusinessComponent
   ],
   imports: [
     BrowserModule,

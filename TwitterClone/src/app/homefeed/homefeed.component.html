@@ -15,16 +15,17 @@
     />
   </head>
   <body>
-    <app-twitter-side-menu></app-twitter-side-menu>
+    <button class="tweetBox__tweetButton" href="login" type="submit" (ngSubmit)="goToLogin()" onclick="goToLogin()"><a href="loginn">Login</a></button>
+    <!--<app-twitter-side-menu></app-twitter-side-menu> -->
 
     <!-- feed starts -->
-    <div class="feed">
+    <!--<div class="feed">
       <div class="feed__header">
         <h2>Home</h2>
-      </div>
+      </div> -->
 
       <!-- tweetbox starts -->
-      <div class="tweetBox">
+      <!--<div class="tweetBox">
         <form>
           <div class="tweetbox__input">
             <img src="/assets/woman_avatar.jpg" alt="image">
@@ -32,12 +33,12 @@
           </div>
           <button class="tweetBox__tweetButton" type="submit">Tweet</button>
         </form>
-      </div>
+      </div> -->
       <!-- tweetbox ends -->
 
-      <app-tweet-tile></app-tweet-tile>
+      <!--<app-tweet-tile></app-tweet-tile> -->
 
-    </div>
+    <!--</div> -->
     <!-- feed ends -->
   </body>
 </html>
