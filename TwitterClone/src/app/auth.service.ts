@@ -39,7 +39,7 @@ export class AuthService {
  
   logout() {
     localStorage.removeItem('jwt')
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/login');
   }
 
   tokenIsPresent(): Boolean {

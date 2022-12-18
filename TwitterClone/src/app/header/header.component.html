@@ -1,12 +1,12 @@
 <div>
 <ul>
     
-    <li id="left"><a href="register">Register</a></li>
-    <li id="left"><a href="register-business">Register business</a></li>
-    <!--<li id="left"><a href="login">Login</a></li> -->
-    <!--<li id="left"><a href="all">All tweets</a></li> -->
-    <li id="left"><a href="">Logout</a></li>
-    <!--<li id="left"><a href="user-profile">User profile</a></li> -->
+    <li *ngIf="this.isLoggedIn()==null" id="left"><a href="register">Register</a></li>
+    <li *ngIf="this.isLoggedIn()==null" id="left"><a href="register-business">Register business</a></li>
+    <li *ngIf="this.isLoggedIn()==null" id="left"><a href="login">Login</a></li>
+    <li *ngIf="this.isLoggedIn()!=null" id="left"><a href="all">All tweets</a></li>
+    <li *ngIf="this.isLoggedIn()!=null" id="left"><a (click)="logout()">Logout</a></li>
+    <li *ngIf="this.isLoggedIn()!=null" id="left"><a href="user-profile">User profile</a></li>
     <a class="active" href="#home"><img src="/assets/twitter-logo.png" alt="not loaded" id="logo"></a>
   </ul>
 </div>
