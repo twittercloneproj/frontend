@@ -1,0 +1,14 @@
+
+    <h2 mat-dialog-title>Likes</h2>
+    <div  *ngFor="let like of likes; let i = index">
+        <div *ngIf="likes?.length">
+            <mat-dialog-content>{{like.username}}</mat-dialog-content>
+        </div>
+        <div *ngIf = "likes?.length == null">
+            <mat-dialog-content><p>Nobody liked.</p> </mat-dialog-content>
+        </div>
+        
+    </div>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>

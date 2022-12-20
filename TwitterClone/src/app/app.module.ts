@@ -30,6 +30,11 @@ import { VerifyComponent } from './verify/verify.component';
 import { TwitterLogintwoComponent } from './twitter-logintwo/twitter-logintwo.component';
 import { UserProfilebusinessComponent } from './user-profilebusiness/user-profilebusiness.component';
 import { UserTilebusinessComponent } from './user-tilebusiness/user-tilebusiness.component';
+import { LikeButtonComponent } from './like-button/like-button.component';
+import { PopoutWindowModule } from 'angular-popout-window';
+import {MatDialogModule} from "@angular/material/dialog";
+import { DialogLikesComponent } from './dialog-likes/dialog-likes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -56,7 +61,9 @@ import { UserTilebusinessComponent } from './user-tilebusiness/user-tilebusiness
     VerifyComponent,
     TwitterLogintwoComponent,
     UserProfilebusinessComponent,
-    UserTilebusinessComponent
+    UserTilebusinessComponent,
+    LikeButtonComponent,
+    DialogLikesComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,10 @@ import { UserTilebusinessComponent } from './user-tilebusiness/user-tilebusiness
     FormsModule,
     HttpClientModule,
     RecaptchaModule,
+    PopoutWindowModule,
     RecaptchaFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [{

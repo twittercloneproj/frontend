@@ -14,9 +14,7 @@
       </div>
       <hr />
       <span>
-        <button class="login" (click)="LikeTweet(tweet.id)">
-          Like
-        </button>
+        <app-like-button [tweet] = "tweet"></app-like-button>
       </span>
     </div>
     </div>
