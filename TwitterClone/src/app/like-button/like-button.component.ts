@@ -43,7 +43,6 @@ export class LikeButtonComponent {
   loadLikes(){
     this.likeService.getLikes(this.tweet.id).subscribe(like => {
       this.likes = like;
-        this.likeLength = like.length;
     })
   }
 

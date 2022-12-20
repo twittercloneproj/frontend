@@ -22,7 +22,6 @@ export class DialogLikesComponent {
   loadLikes(){
     this.likeService.getLikes(this.data.tweetId).subscribe(like => {
       this.likes = like;
-        this.likeLength = like.length;
     })
   }
 
