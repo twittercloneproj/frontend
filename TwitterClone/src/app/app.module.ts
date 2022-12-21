@@ -35,6 +35,11 @@ import { PopoutWindowModule } from 'angular-popout-window';
 import {MatDialogModule} from "@angular/material/dialog";
 import { DialogLikesComponent } from './dialog-likes/dialog-likes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PostTileprofileComponent } from './shared/post-tileprofile/post-tileprofile/post-tileprofile.component';
+import { PostTileprofilebusinessComponent } from './shared/post-tileprofilebusiness/post-tileprofilebusiness/post-tileprofilebusiness.component';
+import { UserTilenewuserComponent } from './user-tilenewuser/user-tilenewuser.component';
+import { UserProfilenewuserComponent } from './user-profilenewuser/user-profilenewuser.component';
+import { PostTileProfilenewuserComponent } from './shared/post-tileprofilenewuser/post-tile-profilenewuser/post-tile-profilenewuser.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -63,7 +68,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserProfilebusinessComponent,
     UserTilebusinessComponent,
     LikeButtonComponent,
-    DialogLikesComponent
+    DialogLikesComponent,
+    PostTileprofileComponent,
+    PostTileprofilebusinessComponent,
+    UserTilenewuserComponent,
+    UserProfilenewuserComponent,
+    PostTileProfilenewuserComponent
   ],
   imports: [
     BrowserModule,

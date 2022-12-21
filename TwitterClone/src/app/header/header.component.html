@@ -6,7 +6,7 @@
     <li *ngIf="this.isLoggedIn()==null" id="left"><a href="login">Login</a></li>
     <li *ngIf="this.isLoggedIn()!=null" id="left"><a href="all">All tweets</a></li>
     <li *ngIf="this.isLoggedIn()!=null" id="left"><a (click)="logout()">Logout</a></li>
-    <li *ngIf="this.isLoggedIn()!=null" id="left"><a href="user-profile">User profile</a></li>
+    <li *ngIf="this.isLoggedIn()!=null" id="left"><a href="user-profilenewuser">User profile</a></li>
     <a class="active" href="#home"><img src="/assets/twitter-logo.png" alt="not loaded" id="logo"></a>
   </ul>
 </div>

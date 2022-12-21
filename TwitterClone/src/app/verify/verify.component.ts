@@ -75,7 +75,7 @@ export class VerifyComponent implements OnInit {
 
     this.verifyRequestPayload.verify = this.verifyForm.get('verify')?.value;
     if(this.verifyForm.get('verify')?.value == '747888') {
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/loginn');
     } else {
       alert(this.message)
     }

@@ -12,6 +12,7 @@ import { TwitterRegisterBusinessComponent } from './twitter-register-business/tw
 import { TwitterRegisterComponent } from './twitter-register/twitter-register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfilebusinessComponent } from './user-profilebusiness/user-profilebusiness.component';
+import { UserProfilenewuserComponent } from './user-profilenewuser/user-profilenewuser.component';
 import { VerifyComponent } from './verify/verify.component';
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'user-profile', component: UserProfileComponent},
   {path: 'verify', component:VerifyComponent},
   {path: 'loginn', component: TwitterLogintwoComponent},
-  {path: 'user-profilebusiness', component: UserProfilebusinessComponent}
+  {path: 'user-profilebusiness', component: UserProfilebusinessComponent},
+  {path: 'user-profilenewuser', component: UserProfilenewuserComponent}
 ];
 
 @NgModule({
