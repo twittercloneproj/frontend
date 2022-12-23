@@ -33,6 +33,8 @@ import { UserTilebusinessComponent } from './user-tilebusiness/user-tilebusiness
 import { LikeButtonComponent } from './like-button/like-button.component';
 import { PopoutWindowModule } from 'angular-popout-window';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { DialogLikesComponent } from './dialog-likes/dialog-likes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostTileprofileComponent } from './shared/post-tileprofile/post-tileprofile/post-tileprofile.component';
@@ -85,6 +87,8 @@ import { PostTileProfilenewuserComponent } from './shared/post-tileprofilenewuse
     PopoutWindowModule,
     RecaptchaFormsModule,
     MatDialogModule,
+    MatButtonModule,
+    MatButtonToggleModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],

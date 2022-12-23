@@ -1,21 +1,28 @@
+
 <!-- Display Posts-->
-<div class="row post" *ngFor="let tweet of tweets; let i = index">
+  <div  *ngFor="let tweet of tweets; let i = index">
     <div *ngIf="i >= 0">
-    <!-- <app-vote-button [tweet]="tweet"></app-vote-button> -->
-    <!-- Section to Display Post Information-->
-    <div class="col-md-11">
-      <span class="subreddit-info">
-        <span class="subreddit-text"><a class="posturl" routerLink="">{{tweet.posted_by}}</a></span>
-      </span>
-      <hr />
-      <div>
-        <!--<p class="post-posted_By" [innerHtml]="tweet.posted_by"></p> -->
-        <p class="post-text" [innerHtml]="tweet.text"></p>
+    <div class="tweet">
+      <img class="tweet__author-logo" src="/assets/woman_avatar.jpg" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            {{tweet.posted_by}}
+          </div>
+          <div class="tweet__author-slug">
+            @beckiandchris
+          </div>
+          <div class="tweet__publish-time">
+            38m
+          </div>
+        </div>
+        <div class="tweet__content">
+          <p class="post-text" [innerHtml]="tweet.text"></p>
+        </div>
+        <span>
+          <app-like-button [tweet] = "tweet"></app-like-button>
+        </span>
       </div>
-      <hr />
-      <span>
-        <app-like-button [tweet] = "tweet"></app-like-button>
-      </span>
     </div>
     </div>
   </div>

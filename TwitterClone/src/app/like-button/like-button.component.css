@@ -1,0 +1,12 @@
+ .btn1:focus {
+      background-color: rgb(94, 211, 94) !important;
+  }
+  .btn1:hover {
+    background-color: rgb(94, 211, 94) !important;
+}
+.btn2:focus {
+    background-color: rgb(224, 69, 69) !important;
+}
+.btn2:hover {
+  background-color: rgb(224, 69, 69) !important;
+}
