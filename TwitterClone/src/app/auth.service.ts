@@ -32,7 +32,8 @@ export class AuthService {
     .pipe(map((res) => {
       console.log('Login success');
       localStorage.setItem("jwt", res)
-      console.log(this.getUserID() +' '+this.getUsername() + ' ' +this.getRole() + ' ' + this.getExpiration());
+      console.log(this.getUserID() +' '+this.getUsername() + ' ' + this.getExpiration());
+      //console.log(this.getUserID() +' '+this.getUsername() + ' ' +this.getRole() + ' ' + this.getExpiration());
     }));
   }
 

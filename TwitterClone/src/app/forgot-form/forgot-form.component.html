@@ -50,8 +50,8 @@
                 Password
               </span> 
             </div>
-            <!--<div class="col-md-6">
-              <input type="password" id="inp4" required autofocus minlength="8">
+            <div class="col-md-6">
+              <input type="password" [formControlName]="'repeatedPassword'" class="form-control" name="repeatedPassword" id="inp4" required autofocus minlength="8">
               <span id="span4">
                 Repeated password is required. Password must be 8 characters long, including 1 big letter, 1 small letter, 1 number and 1 special character
               </span>
@@ -61,8 +61,9 @@
               <span id="span4">
                 Repeated password
               </span>                                     
-            </div> -->
+            </div>
             <button [disabled]="!captchaResolved" class="btn btn-primary" id="btn1">Ok</button>
+            <button [disabled]="!captchaResolved" class="btn btn-primary" id="btn2" (click)="gotoLoginForm()">Go to login</button>
         </div>
 
         </form>

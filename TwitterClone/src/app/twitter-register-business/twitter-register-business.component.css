@@ -257,9 +257,23 @@ button:disabled{
     cursor: pointer;
 }
 
+#btn2 {
+    width: 31%;
+    position: absolute;
+    top: 600px;
+    left: 472px;
+    border: none;
+    background-color: #1da1f2;
+    padding: 14px;
+    color: white;
+    font-weight: 600;
+    border-radius: 33px;
+    cursor: pointer;
+}
+
 #link {
     position: absolute;
-    top: 615px;
+    top: 650px;
     left: 570px;
 }
 

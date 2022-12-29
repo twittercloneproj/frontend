@@ -16,7 +16,7 @@ export class UserProfilenewuserComponent implements OnInit {
   //name: string;
   //tweets: TweetModel[];
   tweets: Array<TweetModel> = [];
-  users: Array<ProfileModel> = [{id: 63938,"name":"name: Bogdan","surname":"surname: Bogdanic","username":"username: bogdan","password":"","sex":"sex: male","age": 25,"town":"town: NS","role":"role: Regular"}];
+  users: Array<ProfileModel> = [{id: 63938,"name":"firm: kompanija","surname":"email: oliver.kojic22@gmail.com","username":"username: bogdann","password":"","sex":"website: website","age": 0,"town":"","role":"role: Business"}];
 
   constructor(private authService: AuthService, private userService: UserService) {
 

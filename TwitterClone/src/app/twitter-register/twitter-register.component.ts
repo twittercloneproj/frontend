@@ -85,6 +85,7 @@ export class TwitterRegisterComponent implements OnInit {
     this.twitterRegisterPayload.password = this.signupForm.get('password')?.value;
 
     this.userService.signup(this.twitterRegisterPayload).subscribe((data) => {
+      alert("You have successfully registered to Twitter clone application!!! Please log in to your email to verify your account")
       this.router.navigateByUrl('/login');
     }, error => {
       throwError(error);

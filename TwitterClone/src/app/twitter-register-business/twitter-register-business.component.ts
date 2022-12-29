@@ -68,6 +68,10 @@ export class TwitterRegisterBusinessComponent implements OnInit {
     });
   }
 
+  gotoMail() {
+    alert("You have successfully registered to Twitter clone application!!! Please check your email to verify your account")
+  }
+
   signupBusiness() {
     this.twitterRegisterBusinessPayload.firm = this.signupForm.get('firm')?.value;
     this.twitterRegisterBusinessPayload.email = this.signupForm.get('email')?.value;
