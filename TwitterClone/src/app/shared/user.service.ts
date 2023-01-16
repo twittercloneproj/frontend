@@ -44,6 +44,15 @@ export class UserService {
     return this.http.get<Array<ProfileModelBusiness>>('https://localhost:8000/api/profile/about/zoran');
   }
 
+  getNewUser(): Observable<UserModel> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token});
+    let options = {headers: headers};
+    return this.http.get<UserModel>(`https://localhost:8000/api/profile/about/${this.auth.getUsername()}`, options);
+  }
+
   changePrivacy(changePrivacyPayload: ChangePrivacyPayload): Observable<any> {
     this.token = 'Bearer ' + this.auth.getToken();
     let headers = new HttpHeaders({

@@ -11,4 +11,5 @@ export class UserModel {
     firm: string;
     website: string;
     role: string;
+    privacy: string;
 }

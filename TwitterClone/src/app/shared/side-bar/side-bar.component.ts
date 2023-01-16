@@ -18,8 +18,12 @@ export class SideBarComponent implements OnInit {
   }
 
   goToProfile() {
-    this.router.navigateByUrl('/user-profile');
+    this.router.navigateByUrl('/user-profilenewuser');
   }
+
+  // goToProfile() {
+  //   this.router.navigateByUrl('/user-profile');
+  // }
 
   changePassword() {
     this.router.navigateByUrl('/forgot-form');

@@ -1,5 +1,5 @@
 <!-- Display Posts-->
-<div class="row post" *ngFor="let user of users">
+<div class="row post">
     <!-- <app-vote-button [tweet]="tweet"></app-vote-button> -->
     <!-- Section to Display Post Information-->
     <div class="col-md-11">
@@ -11,11 +11,14 @@
         <!--<p class="post-posted_By" [innerHtml]="tweet.posted_by"></p> -->
         <p class="post-text" [innerHtml]="user.surname"></p>
         <p class="post-text" [innerHtml]="user.username"></p>
-        <p class="post-text" [innerHtml]="user.password"></p>
         <p class="post-text" [innerHtml]="user.sex"></p>
         <p class="post-text" [innerHtml]="user.age"></p>
         <p class="post-text" [innerHtml]="user.town"></p>
+        <p class="post-text" [innerHtml]="user.email"></p>
+        <p class="post-text" [innerHtml]="user.firm"></p>
+        <p class="post-text" [innerHtml]="user.website"></p>
         <p class="post-text" [innerHtml]="user.role"></p>
+        <p class="post-text" [innerHtml]="user.privacy"></p>
       </div>
       <hr />
       <span>

@@ -5,6 +5,7 @@ import { TweetModel } from '../shared/tweet-model';
 import { UserModel } from '../shared/user-model';
 import { UserService } from '../shared/user.service';
 import { ProfileModel } from '../shared/profile-model';
+import { TweetService } from '../shared/tweet.service';
 
 @Component({
   selector: 'app-user-profilenewuser',
@@ -15,17 +16,19 @@ export class UserProfilenewuserComponent implements OnInit {
 
   //name: string;
   //tweets: TweetModel[];
-  tweets: Array<TweetModel> = [];
-  users: Array<ProfileModel> = [{id: 63938,"name":"firm: kompanija","surname":"email: oliver.kojic22@gmail.com","username":"username: bogdann","password":"","sex":"website: website","age": 0,"town":"","role":"role: Business"}];
+  //tweets: Array<TweetModel> = [];
+  //users: Array<ProfileModel> = [{id: 63938,"name":"firm: kompanija","surname":"email: oliver.kojic22@gmail.com","username":"username: bogdann","password":"","sex":"website: website","age": 0,"town":"","role":"role: Business"}];
+  tweets: TweetModel[];
+  user: UserModel;
 
-  constructor(private authService: AuthService, private userService: UserService) {
+  constructor(private authService: AuthService, private userService: UserService, private tweetService: TweetService) {
 
-    this.authService.getAllTweets().subscribe(tweet => {
-      this.tweets = tweet;
+    this.userService.getNewUser().subscribe(user => {
+      this.user = user;
     });
 
-    this.userService.getUser().subscribe(user => {
-      this.users = user;
+    this.tweetService.getUserTweets().subscribe(tweet => {
+      this.tweets = tweet;
     });
 
     //this.userService.getAllUsers().subscribe(user => {
@@ -39,5 +42,6 @@ export class UserProfilenewuserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 }

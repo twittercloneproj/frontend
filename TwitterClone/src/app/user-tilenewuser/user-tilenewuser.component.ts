@@ -12,11 +12,13 @@ import { ProfileModel } from '../shared/profile-model';
 })
 export class UserTilenewuserComponent implements OnInit {
 
-  @Input() users: ProfileModel[];
+  //@Input() users: ProfileModel[];
+  @Input() user: UserModel;
 
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+
   }
 
 }
