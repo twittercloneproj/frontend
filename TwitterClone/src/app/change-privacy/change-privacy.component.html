@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Register</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="para">Changing your privacy</p>
+
+
+        <form [formGroup]="changePrivacyForm" (ngSubmit)="changePrivacy()">
+
+        <div id="inpDiv">
+        <div class="col-md-6">
+            <input type="text" [formControlName]="'privacy'" id="inp1" class="form-control" name="privacy" required
+                autofocus>
+            <span id="span1">
+              Change privacy
+            </span>                                     
+        </div>
+        </div>
+        <button class="btn btn-primary" id="btn1">Change privacy</button>
+        </form>
+        <button class="btn btn-primary" id="btn2" (click)="info()">Privacy info</button>
+    </div>
+</body>
+
+</html>

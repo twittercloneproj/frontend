@@ -1,0 +1,120 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+#recaptcha{
+    width: 32%;
+    position: absolute;
+    top: 580px;
+    right: 30%;
+    padding: 1px;
+    height: 26px;
+    border: none;
+    padding-top: 18px;
+}
+
+#logo {
+    width: 3%;
+    height: 46px;
+    top: 50px;
+    margin-top: 30px;
+    margin-right: 100px;
+}
+
+#span1 {
+    position: absolute;
+    top: 140px;
+    font-size: 15px;
+    left: 479px;
+}
+
+#inp1 {
+    width: 32%;
+    position: absolute;
+    top: 133px;
+    left: 472px;
+    padding: 10px;
+    opacity: 0.5;
+    height: 26px;
+    border: none;
+    background-color: #f0f2f5;
+    border-bottom: solid 2px black;
+    padding-top: 18px;
+}
+
+#btn1 {
+    width: 31%;
+    position: absolute;
+    top: 200px;
+    left: 472px;
+    border: none;
+    background-color: #1da1f2;
+    padding: 14px;
+    color: white;
+    font-weight: 600;
+    border-radius: 33px;
+    cursor: pointer;
+}
+
+#btn2 {
+    width: 31%;
+    position: absolute;
+    top: 250px;
+    left: 472px;
+    border: none;
+    background-color: #1da1f2;
+    padding: 14px;
+    color: white;
+    font-weight: 600;
+    border-radius: 33px;
+    cursor: pointer;
+}
+
+button:disabled{
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+}
+
+#link {
+    position: absolute;
+    top: 730px;
+    left: 570px;
+}
+
+#link a {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+#link a:hover {
+    text-decoration: underline;
+}
+
+#para {
+    position: absolute;
+    left: 638px;
+    top: 77px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.is-invalid {
+    border-left: solid 6px red;
+}
+  
+/* .material-icons {
+    display: inline-flex;
+    vertical-align: middle;
+} */
+
+#password {
+    top: 500px;
+}

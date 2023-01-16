@@ -29,4 +29,12 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/user-profilebusiness');
   }
 
+  changePrivacy() {
+    this.router.navigateByUrl('/change-privacy');
+  }
+
+  getFollowRequests() {
+    this.router.navigateByUrl('/follow-requests');
+  }
+
 }

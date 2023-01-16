@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChangePrivacyComponent } from './change-privacy/change-privacy.component';
+import { FollowRequestsComponent } from './follow-requests/follow-requests.component';
 import { ForgotFormComponent } from './forgot-form/forgot-form.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
@@ -29,7 +31,9 @@ const routes: Routes = [
   {path: 'verify', component:VerifyComponent},
   {path: 'loginn', component: TwitterLogintwoComponent},
   {path: 'user-profilebusiness', component: UserProfilebusinessComponent},
-  {path: 'user-profilenewuser', component: UserProfilenewuserComponent}
+  {path: 'user-profilenewuser', component: UserProfilenewuserComponent},
+  {path: 'change-privacy', component: ChangePrivacyComponent},
+  {path: 'follow-requests', component: FollowRequestsComponent}
 ];
 
 @NgModule({

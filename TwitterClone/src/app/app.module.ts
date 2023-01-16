@@ -42,6 +42,9 @@ import { PostTileprofilebusinessComponent } from './shared/post-tileprofilebusin
 import { UserTilenewuserComponent } from './user-tilenewuser/user-tilenewuser.component';
 import { UserProfilenewuserComponent } from './user-profilenewuser/user-profilenewuser.component';
 import { PostTileProfilenewuserComponent } from './shared/post-tileprofilenewuser/post-tile-profilenewuser/post-tile-profilenewuser.component';
+import { ChangePrivacyComponent } from './change-privacy/change-privacy.component';
+import { FollowRequestsComponent } from './follow-requests/follow-requests.component';
+import { RequestsTileComponent } from './requests-tile/requests-tile.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -75,7 +78,10 @@ import { PostTileProfilenewuserComponent } from './shared/post-tileprofilenewuse
     PostTileprofilebusinessComponent,
     UserTilenewuserComponent,
     UserProfilenewuserComponent,
-    PostTileProfilenewuserComponent
+    PostTileProfilenewuserComponent,
+    ChangePrivacyComponent,
+    FollowRequestsComponent,
+    RequestsTileComponent
   ],
   imports: [
     BrowserModule,
