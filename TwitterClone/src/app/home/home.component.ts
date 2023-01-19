@@ -15,9 +15,12 @@ export class HomeComponent implements OnInit {
   tweets: Array<TweetModel> = [];
 
   constructor(private tweetService: TweetService, private userService: UserService) { 
-    this.tweetService.getAllTweets().subscribe(tweet => {
+    this.tweetService.getTweetsHomeFeed().subscribe(tweet => {
       this.tweets = tweet;
     });
+    // this.tweetService.getAllTweets().subscribe(tweet => {
+    //   this.tweets = tweet;
+    // });
 
   }
 

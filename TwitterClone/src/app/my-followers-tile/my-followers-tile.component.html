@@ -1,0 +1,14 @@
+<div  *ngFor="let myfollower of myfollowers; let i = index">
+    <div *ngIf="i >= 0">
+    <div class="tweet">
+      <img class="tweet__author-logo" src="/assets/woman_avatar.jpg" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            {{myfollower.username}}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>

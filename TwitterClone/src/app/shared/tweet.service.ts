@@ -18,6 +18,15 @@ export class TweetService {
     return this.http.get<Array<TweetModel>>('https://localhost:8000/api/tweets/all');
   }
 
+  getTweetsHomeFeed(): Observable<Array<TweetModel>> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token});
+    let options = {headers: headers};
+    return this.http.get<Array<TweetModel>>(`https://localhost:8000/api/tweets/home`, options);
+  }
+
   getUserTweets(): Observable<Array<TweetModel>> {
     this.token = 'Bearer ' + this.auth.getToken();
     let headers = new HttpHeaders({

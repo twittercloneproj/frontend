@@ -45,6 +45,12 @@ import { PostTileProfilenewuserComponent } from './shared/post-tileprofilenewuse
 import { ChangePrivacyComponent } from './change-privacy/change-privacy.component';
 import { FollowRequestsComponent } from './follow-requests/follow-requests.component';
 import { RequestsTileComponent } from './requests-tile/requests-tile.component';
+import { FollowNewUsersComponent } from './follow-new-users/follow-new-users.component';
+import { FollowNewUsersTileComponent } from './follow-new-users-tile/follow-new-users-tile.component';
+import { MyFollowersComponent } from './my-followers/my-followers.component';
+import { MyFollowersTileComponent } from './my-followers-tile/my-followers-tile.component';
+import { PeopleIFollowComponent } from './people-i-follow/people-i-follow.component';
+import { PeopleIFollowTileComponent } from './people-i-follow-tile/people-i-follow-tile.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -81,7 +87,13 @@ import { RequestsTileComponent } from './requests-tile/requests-tile.component';
     PostTileProfilenewuserComponent,
     ChangePrivacyComponent,
     FollowRequestsComponent,
-    RequestsTileComponent
+    RequestsTileComponent,
+    FollowNewUsersComponent,
+    FollowNewUsersTileComponent,
+    MyFollowersComponent,
+    MyFollowersTileComponent,
+    PeopleIFollowComponent,
+    PeopleIFollowTileComponent
   ],
   imports: [
     BrowserModule,

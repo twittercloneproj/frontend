@@ -41,4 +41,16 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/follow-requests');
   }
 
+  followNewUsers() {
+    this.router.navigateByUrl('/follow-new-users');
+  }
+
+  getMyFollowers() {
+    this.router.navigateByUrl('/my-followers');
+  }
+
+  getPeopleIFollow() {
+    this.router.navigateByUrl('/people-i-follow');
+  }
+
 }

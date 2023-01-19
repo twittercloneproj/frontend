@@ -53,6 +53,24 @@ export class UserService {
     return this.http.get<UserModel>(`https://localhost:8000/api/profile/about/${this.auth.getUsername()}`, options);
   }
 
+  getMyFollowers(): Observable<Array<UserModel>> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token});
+    let options = {headers: headers};
+    return this.http.get<Array<UserModel>>(`https://localhost:8000/api/social-graph/followers/${this.auth.getUsername()}`, options);
+  }
+
+  getPeopleIFollow(): Observable<Array<UserModel>> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token});
+    let options = {headers: headers};
+    return this.http.get<Array<UserModel>>(`https://localhost:8000/api/social-graph/${this.auth.getUsername()}/following`, options);
+  }
+
   changePrivacy(changePrivacyPayload: ChangePrivacyPayload): Observable<any> {
     this.token = 'Bearer ' + this.auth.getToken();
     let headers = new HttpHeaders({
@@ -70,4 +88,32 @@ export class UserService {
     let options = {headers: headers};
     return this.http.get<Array<UserModel>>('https://localhost:8000/api/social-graph/requests', options)
   }
+
+  createFollowGraBaza5(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/grafbaza5`, options);
+  }
+
+  createFollowObican123(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/obican123`, options);
+  }
+
+  createFollowBiznis123(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/biznis123`, options);
+  }
+
 }
