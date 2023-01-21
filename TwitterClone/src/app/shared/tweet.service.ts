@@ -4,6 +4,7 @@ import { TweetModel } from './tweet-model';
 import { Observable } from 'rxjs';
 import { CreateTweetPayload } from '../post/create-post/create-tweet.payload';
 import { AuthService } from '../auth.service';
+import { LikePayload } from '../vote-button/like-payload';
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +52,14 @@ export class TweetService {
 
   getAllTweetsByUser(name: string): Observable<TweetModel[]> {
     return this.http.get<TweetModel[]>('https://localhost:8080/api/tweets/by-user/' + name);
+  }
+
+  retweet(likePayload: LikePayload): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post('https://localhost:8000/api/tweets/retweet/' + likePayload.id, likePayload, options);
   }
 }

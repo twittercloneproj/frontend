@@ -29,9 +29,6 @@ export class LikeButtonComponent {
       }
      }
 
-    
-  
-  
   ngOnInit(): void {
     this.loadLikes();
   }
@@ -58,6 +55,14 @@ export class LikeButtonComponent {
   dislikeTweet() {
     this.likePayload.id = this.tweet.id;
     this.likeService.dislikeTweet(this.likePayload).subscribe(() => {}, error => {
+      this.toastr.error(error.error.message);
+      throwError(error);
+    });
+  }
+
+  retweet() {
+    this.likePayload.id = this.tweet.id;
+    this.tweetService.retweet(this.likePayload).subscribe(() => {}, error => {
       this.toastr.error(error.error.message);
       throwError(error);
     });
