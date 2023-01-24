@@ -27,9 +27,13 @@ export class UserProfilenewuserComponent implements OnInit {
       this.user = user;
     });
 
-    this.tweetService.getUserTweets().subscribe(tweet => {
+    this.tweetService.getTweetsHomeFeed().subscribe(tweet => {
       this.tweets = tweet;
     });
+
+    //this.tweetService.getUserTweets().subscribe(tweet => {
+    //  this.tweets = tweet;
+    //});
 
     //this.userService.getAllUsers().subscribe(user => {
     //  this.users = user;
