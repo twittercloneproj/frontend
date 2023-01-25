@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomeComponent } from './home/home.component';
 import { HomefeedComponent } from './homefeed/homefeed.component';
 import { MyFollowersComponent } from './my-followers/my-followers.component';
+import { MySuggestionsComponent } from './my-suggestions/my-suggestions.component';
 import { PasswordComponent } from './password/password.component';
 import { PeopleIFollowComponent } from './people-i-follow/people-i-follow.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'follow-requests', component: FollowRequestsComponent},
   {path: 'follow-new-users', component: FollowNewUsersComponent},
   {path: 'my-followers', component: MyFollowersComponent},
-  {path: 'people-i-follow', component: PeopleIFollowComponent}
+  {path: 'people-i-follow', component: PeopleIFollowComponent},
+  {path: 'suggestions', component: MySuggestionsComponent}
 ];
 
 @NgModule({

@@ -89,6 +89,15 @@ export class UserService {
     return this.http.get<Array<UserModel>>('https://localhost:8000/api/social-graph/requests', options)
   }
 
+  getMySuggestions(): Observable<Array<UserModel>> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token});
+    let options = {headers: headers};
+    return this.http.get<Array<UserModel>>('https://localhost:8000/api/social-graph/suggestions', options)
+  }
+
   createFollowGraBaza5(): Observable<any> {
     this.token = 'Bearer ' + this.auth.getToken();
     let headers = new HttpHeaders({

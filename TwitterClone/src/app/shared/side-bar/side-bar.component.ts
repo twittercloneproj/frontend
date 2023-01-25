@@ -53,4 +53,8 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/people-i-follow');
   }
 
+  getSuggestions() {
+    this.router.navigateByUrl('/suggestions');
+  }
+
 }

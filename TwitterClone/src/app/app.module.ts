@@ -51,6 +51,8 @@ import { MyFollowersComponent } from './my-followers/my-followers.component';
 import { MyFollowersTileComponent } from './my-followers-tile/my-followers-tile.component';
 import { PeopleIFollowComponent } from './people-i-follow/people-i-follow.component';
 import { PeopleIFollowTileComponent } from './people-i-follow-tile/people-i-follow-tile.component';
+import { MySuggestionsComponent } from './my-suggestions/my-suggestions.component';
+import { MySuggestionsTileComponent } from './my-suggestions-tile/my-suggestions-tile.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -93,7 +95,9 @@ import { PeopleIFollowTileComponent } from './people-i-follow-tile/people-i-foll
     MyFollowersComponent,
     MyFollowersTileComponent,
     PeopleIFollowComponent,
-    PeopleIFollowTileComponent
+    PeopleIFollowTileComponent,
+    MySuggestionsComponent,
+    MySuggestionsTileComponent
   ],
   imports: [
     BrowserModule,
