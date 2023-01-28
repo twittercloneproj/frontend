@@ -57,4 +57,12 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/suggestions');
   }
 
+  unfollowUsers() {
+    this.router.navigateByUrl('/unfollow');
+  }
+
+  acceptRequests() {
+    this.router.navigateByUrl('/accept');
+  }
+
 }

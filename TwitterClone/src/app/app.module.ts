@@ -53,6 +53,11 @@ import { PeopleIFollowComponent } from './people-i-follow/people-i-follow.compon
 import { PeopleIFollowTileComponent } from './people-i-follow-tile/people-i-follow-tile.component';
 import { MySuggestionsComponent } from './my-suggestions/my-suggestions.component';
 import { MySuggestionsTileComponent } from './my-suggestions-tile/my-suggestions-tile.component';
+import { UnfollowNewUsersComponent } from './unfollow-new-users/unfollow-new-users.component';
+import { UnfollowNewUsersTileComponent } from './unfollow-new-users-tile/unfollow-new-users-tile.component';
+import { AcceptRequestsComponent } from './accept-requests/accept-requests.component';
+import { AcceptRequestsTileComponent } from './accept-requests-tile/accept-requests-tile.component';
+import { CreateAcceptRequestComponent } from './create-accept-request/create-accept-request.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -97,7 +102,12 @@ import { MySuggestionsTileComponent } from './my-suggestions-tile/my-suggestions
     PeopleIFollowComponent,
     PeopleIFollowTileComponent,
     MySuggestionsComponent,
-    MySuggestionsTileComponent
+    MySuggestionsTileComponent,
+    UnfollowNewUsersComponent,
+    UnfollowNewUsersTileComponent,
+    AcceptRequestsComponent,
+    AcceptRequestsTileComponent,
+    CreateAcceptRequestComponent
   ],
   imports: [
     BrowserModule,

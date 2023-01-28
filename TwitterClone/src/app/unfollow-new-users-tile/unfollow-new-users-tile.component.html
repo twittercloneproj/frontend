@@ -1,0 +1,21 @@
+<!-- Display requests-->
+<div  *ngFor="let newunfollowing of newunfollowings; let i = index">
+    <div *ngIf="i >= 0">
+    <div class="tweet">
+      <img class="tweet__author-logo" src="/assets/woman_avatar.jpg" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            {{newunfollowing.username}}
+          </div>
+          <div class="tweet__author-slug">
+            <!--@beckiandchris -->
+          </div>
+          <div class="tweet__publish-time">
+            <!--38m -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>

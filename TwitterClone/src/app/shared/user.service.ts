@@ -9,6 +9,8 @@ import { ProfileModel } from './profile-model';
 import { ProfileModelBusiness } from './profile-modelbusiness';
 import { ChangePrivacyPayload } from '../change-privacy/change-privacy.payload';
 import { AuthService } from '../auth.service';
+import { BaseRouteReuseStrategy } from '@angular/router';
+import { AcceptRequestPayload } from '../accept-requests/accept-request.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -77,7 +79,7 @@ export class UserService {
       'Content-Type': 'application/json',
       'Authorization': this.token});
     let options = {headers: headers};
-    return this.http.patch('https://localhost:8000/api/profile/change-privacy', changePrivacyPayload, options);
+    return this.http.post('https://localhost:8000/api/profile/change-privacy', changePrivacyPayload, options);
   }
 
   getAllRequests(): Observable<Array<UserModel>> {
@@ -104,7 +106,7 @@ export class UserService {
       'Content-Type': 'application/json',
       'Authorization': this.token });
   let options = { headers: headers };
-    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/grafbaza5`, options);
+    return this.http.post(`https://localhost:8000/api/social-graph/follow/grafbaza5`, {}, options);
   }
 
   createFollowObican123(): Observable<any> {
@@ -113,7 +115,7 @@ export class UserService {
       'Content-Type': 'application/json',
       'Authorization': this.token });
   let options = { headers: headers };
-    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/obican123`, options);
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/obican123`, {},  options);
   }
 
   createFollowBiznis123(): Observable<any> {
@@ -122,7 +124,34 @@ export class UserService {
       'Content-Type': 'application/json',
       'Authorization': this.token });
   let options = { headers: headers };
-    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/biznis123`, options);
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/biznis123`, {}, options);
+  }
+
+  createFollowObican1234(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/obican1234`, {}, options);
+  }
+
+  createUnfollowGrafBaza5(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post<any>(`https://localhost:8000/api/social-graph/unfollow/grafbaza5`, {}, options);
+  }
+
+  createAcceptRequest(acceptRequestPayload: AcceptRequestPayload): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/request/obican1234`, acceptRequestPayload, options);
   }
 
 }

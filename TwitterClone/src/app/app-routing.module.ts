@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AcceptRequestsComponent } from './accept-requests/accept-requests.component';
 import { ChangePrivacyComponent } from './change-privacy/change-privacy.component';
+import { CreateAcceptRequestComponent } from './create-accept-request/create-accept-request.component';
 import { FollowNewUsersComponent } from './follow-new-users/follow-new-users.component';
 import { FollowRequestsComponent } from './follow-requests/follow-requests.component';
 import { ForgotFormComponent } from './forgot-form/forgot-form.component';
@@ -16,6 +18,7 @@ import { TwitterLoginComponent } from './twitter-login/twitter-login.component';
 import { TwitterLogintwoComponent } from './twitter-logintwo/twitter-logintwo.component';
 import { TwitterRegisterBusinessComponent } from './twitter-register-business/twitter-register-business.component';
 import { TwitterRegisterComponent } from './twitter-register/twitter-register.component';
+import { UnfollowNewUsersComponent } from './unfollow-new-users/unfollow-new-users.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfilebusinessComponent } from './user-profilebusiness/user-profilebusiness.component';
 import { UserProfilenewuserComponent } from './user-profilenewuser/user-profilenewuser.component';
@@ -41,7 +44,10 @@ const routes: Routes = [
   {path: 'follow-new-users', component: FollowNewUsersComponent},
   {path: 'my-followers', component: MyFollowersComponent},
   {path: 'people-i-follow', component: PeopleIFollowComponent},
-  {path: 'suggestions', component: MySuggestionsComponent}
+  {path: 'suggestions', component: MySuggestionsComponent},
+  {path: 'unfollow', component: UnfollowNewUsersComponent},
+  {path: 'accept', component: AcceptRequestsComponent},
+  {path: 'acceptRejectRequest', component: CreateAcceptRequestComponent}
 ];
 
 @NgModule({

@@ -32,8 +32,8 @@ export class FollowNewUsersComponent implements OnInit {
     })
   }
 
-  createFollowObican123() {
-    this.userService.createFollowObican123().subscribe((data) => {
+  createFollowObican1234() {
+    this.userService.createFollowObican1234().subscribe((data) => {
     this.router.navigateByUrl('/all');
   }, error => {
     throwError(error);
