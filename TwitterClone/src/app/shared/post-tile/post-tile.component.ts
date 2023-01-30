@@ -22,9 +22,12 @@ export class PostTileComponent implements OnInit {
 
   constructor(private likeService: LikeService, private router: Router, private tweetService: TweetService,
     private toastr: ToastrService) {
-      this.tweetService.getAllTweets().subscribe(tweet => {
+      this.tweetService.getTweetsHomeFeed().subscribe(tweet => {
         this.tweets = tweet;
-      })
+      });
+      //this.tweetService.getAllTweets().subscribe(tweet => {
+      //  this.tweets = tweet;
+      //})
       
      }
 

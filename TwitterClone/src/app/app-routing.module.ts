@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcceptRequestsComponent } from './accept-requests/accept-requests.component';
 import { ChangePrivacyComponent } from './change-privacy/change-privacy.component';
+import { CreateAcceptRequestTwoComponent } from './create-accept-request-two/create-accept-request-two.component';
 import { CreateAcceptRequestComponent } from './create-accept-request/create-accept-request.component';
 import { FollowNewUsersComponent } from './follow-new-users/follow-new-users.component';
 import { FollowRequestsComponent } from './follow-requests/follow-requests.component';
@@ -47,7 +48,8 @@ const routes: Routes = [
   {path: 'suggestions', component: MySuggestionsComponent},
   {path: 'unfollow', component: UnfollowNewUsersComponent},
   {path: 'accept', component: AcceptRequestsComponent},
-  {path: 'acceptRejectRequest', component: CreateAcceptRequestComponent}
+  {path: 'acceptRejectRequest', component: CreateAcceptRequestComponent},
+  {path: 'acceptRejectRequestTwo', component: CreateAcceptRequestTwoComponent}
 ];
 
 @NgModule({

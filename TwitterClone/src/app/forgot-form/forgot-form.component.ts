@@ -64,7 +64,7 @@ export class ForgotFormComponent implements OnInit {
     this.forgotFormPayload.password = this.signupForm.get('password')?.value;
     this.repeatedPassword = this.signupForm.get('repeatedPassword')?.value;
 
-    if(this.signupForm.get('repeatedPassword')?.value == 'Password123!' || this.signupForm.get('repeatedPassword')?.value == 'Password1234!' || this.signupForm.get('repeatedPassword')?.value == 'Password12345!') {
+    if(this.signupForm.get('repeatedPassword')?.value === this.signupForm.get('repeatedPassword')?.value) {
       this.userService.forgotForm(this.forgotFormPayload).subscribe((data) => {
         this.router.navigateByUrl('/loginn');
       }, error => {
@@ -73,6 +73,16 @@ export class ForgotFormComponent implements OnInit {
     } else {
       alert(this.message)
     }
+
+    //if(this.signupForm.get('repeatedPassword')?.value == 'Password123!' || this.signupForm.get('repeatedPassword')?.value == 'Password1234!' || this.signupForm.get('repeatedPassword')?.value == 'Password12345!') {
+    //  this.userService.forgotForm(this.forgotFormPayload).subscribe((data) => {
+    //    this.router.navigateByUrl('/loginn');
+    //  }, error => {
+    //    throwError(error);
+    //    })
+    //} else {
+    //  alert(this.message)
+    //}
 
     //this.userService.forgotForm(this.forgotFormPayload).subscribe((data) => {
     //  this.router.navigateByUrl('/loginn');

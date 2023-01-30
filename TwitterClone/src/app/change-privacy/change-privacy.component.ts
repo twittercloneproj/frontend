@@ -15,7 +15,7 @@ import { ChangePrivacyPayload } from './change-privacy.payload';
 export class ChangePrivacyComponent implements OnInit {
 
   login = 'login';
-  public message = 'Privacy has only two values: public or private';
+  public message = 'Privacy has only two values: Public or Private';
 
   token: string|undefined;
 
@@ -38,7 +38,7 @@ export class ChangePrivacyComponent implements OnInit {
   changePrivacy() {
     this.changePrivacyPayload.privacy = this.changePrivacyForm.get('privacy')?.value;
 
-    if(this.changePrivacyForm.get('privacy')?.value !== 'private' || this.changePrivacyForm.get('privacy')?.value !== 'public') {
+    if(this.changePrivacyForm.get('privacy')?.value === 'Private' || this.changePrivacyForm.get('privacy')?.value === 'Public') {
       this.userService.changePrivacy(this.changePrivacyPayload).subscribe((data) => {
         this.router.navigateByUrl('/all');
       }, error => {

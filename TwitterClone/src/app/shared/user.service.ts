@@ -136,6 +136,51 @@ export class UserService {
     return this.http.post<any>(`https://localhost:8000/api/social-graph/follow/obican1234`, {}, options);
   }
 
+  createFollowGrafBaza(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/follow/grafbaza`, {}, options);
+  }
+
+  createFollowGrafBaza2(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/follow/grafbaza2`, {}, options);
+  }
+
+  createFollowGrafBaza3(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/follow/grafbaza3`, {}, options);
+  }
+
+  createFollowGrafBaza4(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/follow/grafbaza4`, {}, options);
+  }
+
+  createFollowMilos(): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/follow/milos`, {}, options);
+  }
+
   createUnfollowGrafBaza5(): Observable<any> {
     this.token = 'Bearer ' + this.auth.getToken();
     let headers = new HttpHeaders({
@@ -152,6 +197,15 @@ export class UserService {
       'Authorization': this.token });
   let options = { headers: headers };
     return this.http.post(`https://localhost:8000/api/social-graph/request/obican1234`, acceptRequestPayload, options);
+  }
+
+  createAcceptRequestTwo(acceptRequestPayload: AcceptRequestPayload): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/request/obican123`, acceptRequestPayload, options);
   }
 
 }

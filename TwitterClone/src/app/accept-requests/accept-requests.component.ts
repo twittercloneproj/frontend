@@ -9,7 +9,7 @@ import { UserModel } from '../shared/user-model';
 })
 export class AcceptRequestsComponent implements OnInit {
 
-  acceptrequests: Array<UserModel> = [{id: 63937,"name":"name: obican1234","surname":"surname: grafbaza5","username":"username: grafbaza5","password":"","sex":"sex: male","age": 27,"town":"town: NS","role":"role: Regular", "email": "", "firm": "", "website": "", "privacy": ""}];
+  acceptrequests: Array<UserModel> = [{id: 63937,"name":"name: obican1234","surname":"surname: grafbaza5","username":"username: obican1234","password":"","sex":"sex: male","age": 27,"town":"town: NS","role":"role: Regular", "email": "", "firm": "", "website": "", "privacy": ""}, {id: 63938,"name":"name: obican123","surname":"surname: grafbaza5","username":"username: obican123","password":"","sex":"sex: male","age": 27,"town":"town: NS","role":"role: Regular", "email": "", "firm": "", "website": "", "privacy": ""}];
 
   constructor(private router: Router) { }
 
@@ -19,6 +19,10 @@ export class AcceptRequestsComponent implements OnInit {
 
   acceptRejectRequest() {
     this.router.navigateByUrl('/acceptRejectRequest');
+  }
+
+  acceptRejectRequestObican123() {
+    this.router.navigateByUrl('/acceptRejectRequestTwo');
   }
 
 }

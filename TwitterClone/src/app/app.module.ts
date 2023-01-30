@@ -58,6 +58,7 @@ import { UnfollowNewUsersTileComponent } from './unfollow-new-users-tile/unfollo
 import { AcceptRequestsComponent } from './accept-requests/accept-requests.component';
 import { AcceptRequestsTileComponent } from './accept-requests-tile/accept-requests-tile.component';
 import { CreateAcceptRequestComponent } from './create-accept-request/create-accept-request.component';
+import { CreateAcceptRequestTwoComponent } from './create-accept-request-two/create-accept-request-two.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -107,7 +108,8 @@ import { CreateAcceptRequestComponent } from './create-accept-request/create-acc
     UnfollowNewUsersTileComponent,
     AcceptRequestsComponent,
     AcceptRequestsTileComponent,
-    CreateAcceptRequestComponent
+    CreateAcceptRequestComponent,
+    CreateAcceptRequestTwoComponent
   ],
   imports: [
     BrowserModule,

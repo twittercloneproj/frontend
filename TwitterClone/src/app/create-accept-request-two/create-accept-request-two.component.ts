@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
 import { AcceptRequestPayload } from '../accept-requests/accept-request.payload';
 import { UserService } from '../shared/user.service';
+import { throwError } from 'rxjs';
 
 @Component({
-  selector: 'app-create-accept-request',
-  templateUrl: './create-accept-request.component.html',
-  styleUrls: ['./create-accept-request.component.css']
+  selector: 'app-create-accept-request-two',
+  templateUrl: './create-accept-request-two.component.html',
+  styleUrls: ['./create-accept-request-two.component.css']
 })
-export class CreateAcceptRequestComponent implements OnInit {
+export class CreateAcceptRequestTwoComponent implements OnInit {
 
   createAcceptRequestForm: FormGroup;
   acceptRequestPayload: AcceptRequestPayload;
@@ -40,7 +40,7 @@ export class CreateAcceptRequestComponent implements OnInit {
     }
 
     if(this.createAcceptRequestForm.get('approved')?.value === 'true' || this.createAcceptRequestForm.get('approved')?.value === 'false') {
-      this.userService.createAcceptRequest(this.acceptRequestPayload).subscribe((data) => {
+      this.userService.createAcceptRequestTwo(this.acceptRequestPayload).subscribe((data) => {
         this.router.navigateByUrl('/all');
       }, error => {
         throwError(error);

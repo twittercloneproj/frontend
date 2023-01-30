@@ -19,7 +19,7 @@
 
         <div id="inpDiv">
             <div class="col-md-6">
-              <input type="text" [formControlName]="'username'" id="inp1" class="form-control" name="username" required
+              <input type="text" [formControlName]="'username'" id="inp1" class="form-control" name="username" placeholder="Biznis12345" required
                   autofocus>
               <span *ngIf="signupForm.get('username').errors?.['required'] && signupForm.get('username').touched" id="span1">
                 Username is required
