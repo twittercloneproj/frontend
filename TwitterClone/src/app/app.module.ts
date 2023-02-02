@@ -61,6 +61,7 @@ import { CreateAcceptRequestComponent } from './create-accept-request/create-acc
 import { CreateAcceptRequestTwoComponent } from './create-accept-request-two/create-accept-request-two.component';
 import { AcceptRequestThreeComponent } from './accept-request-three/accept-request-three.component';
 import { CreateAcceptRequestThreeComponent } from './create-accept-request-three/create-accept-request-three.component';
+import { ForgotFormAuthComponent } from './forgot-form-auth/forgot-form-auth.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -113,7 +114,8 @@ import { CreateAcceptRequestThreeComponent } from './create-accept-request-three
     CreateAcceptRequestComponent,
     CreateAcceptRequestTwoComponent,
     AcceptRequestThreeComponent,
-    CreateAcceptRequestThreeComponent
+    CreateAcceptRequestThreeComponent,
+    ForgotFormAuthComponent
   ],
   imports: [
     BrowserModule,

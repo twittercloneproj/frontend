@@ -7,6 +7,7 @@ import { CreateAcceptRequestTwoComponent } from './create-accept-request-two/cre
 import { CreateAcceptRequestComponent } from './create-accept-request/create-accept-request.component';
 import { FollowNewUsersComponent } from './follow-new-users/follow-new-users.component';
 import { FollowRequestsComponent } from './follow-requests/follow-requests.component';
+import { ForgotFormAuthComponent } from './forgot-form-auth/forgot-form-auth.component';
 import { ForgotFormComponent } from './forgot-form/forgot-form.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
@@ -51,7 +52,8 @@ const routes: Routes = [
   {path: 'accept', component: AcceptRequestsComponent},
   {path: 'acceptRejectRequest', component: CreateAcceptRequestComponent},
   {path: 'acceptRejectRequestTwo', component: CreateAcceptRequestTwoComponent},
-  {path: 'acceptRejectRequestThree', component: CreateAcceptRequestThreeComponent}
+  {path: 'acceptRejectRequestThree', component: CreateAcceptRequestThreeComponent},
+  {path: 'forgot-form-auth', component: ForgotFormAuthComponent}
 ];
 
 @NgModule({
