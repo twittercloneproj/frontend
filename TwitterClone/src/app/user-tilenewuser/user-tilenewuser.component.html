@@ -1,15 +1,15 @@
 <!-- Display Posts-->
-<div class="row post">
+<!--<div class="row post"> -->
     <!-- <app-vote-button [tweet]="tweet"></app-vote-button> -->
     <!-- Section to Display Post Information-->
-    <div class="col-md-11">
+    <!--<div class="col-md-11">
       <span class="subreddit-info">
         <span class="subreddit-text"><a class="posturl" routerLink="login">{{user.name}}</a></span>
       </span>
       <hr />
-      <div>
+      <div> -->
         <!--<p class="post-posted_By" [innerHtml]="tweet.posted_by"></p> -->
-        <p class="post-text" [innerHtml]="user.surname"></p>
+        <!--<p class="post-text" [innerHtml]="user.surname"></p>
         <p class="post-text" [innerHtml]="user.username"></p>
         <p class="post-text" [innerHtml]="user.sex"></p>
         <p class="post-text" [innerHtml]="user.age"></p>
@@ -24,4 +24,21 @@
       <span>
       </span>
     </div>
+</div> -->
+<div class="card">
+  <div class="card-header">
+    Username: {{user.name}}
+  </div>
+  <div class="card-body">
+    <p class="card-text">Surname: {{user.surname}}</p>
+    <p class="card-text">Username: {{user.username}}</p>
+    <p class="card-text">Gender: {{user.sex}}</p>
+    <p class="card-text">Age: {{user.age}}</p>
+    <p class="card-text">Town: {{user.town}}</p>
+    <p class="card-text">Email: {{user.email}}</p>
+    <p class="card-text">Company: {{user.firm}}</p>
+    <p class="card-text">Website: {{user.website}}</p>
+    <p class="card-text">Role: {{user.role}}</p>
+    <p class="card-text">Privacy: {{user.privacy}}</p>
+  </div>
 </div>

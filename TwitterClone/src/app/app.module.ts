@@ -59,6 +59,8 @@ import { AcceptRequestsComponent } from './accept-requests/accept-requests.compo
 import { AcceptRequestsTileComponent } from './accept-requests-tile/accept-requests-tile.component';
 import { CreateAcceptRequestComponent } from './create-accept-request/create-accept-request.component';
 import { CreateAcceptRequestTwoComponent } from './create-accept-request-two/create-accept-request-two.component';
+import { AcceptRequestThreeComponent } from './accept-request-three/accept-request-three.component';
+import { CreateAcceptRequestThreeComponent } from './create-accept-request-three/create-accept-request-three.component';
 //import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
@@ -109,7 +111,9 @@ import { CreateAcceptRequestTwoComponent } from './create-accept-request-two/cre
     AcceptRequestsComponent,
     AcceptRequestsTileComponent,
     CreateAcceptRequestComponent,
-    CreateAcceptRequestTwoComponent
+    CreateAcceptRequestTwoComponent,
+    AcceptRequestThreeComponent,
+    CreateAcceptRequestThreeComponent
   ],
   imports: [
     BrowserModule,

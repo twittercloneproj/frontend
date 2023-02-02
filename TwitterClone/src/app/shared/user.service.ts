@@ -82,6 +82,15 @@ export class UserService {
     return this.http.post('https://localhost:8000/api/profile/change-privacy', changePrivacyPayload, options);
   }
 
+  changePrivacySocialGraph(changePrivacyPayload: ChangePrivacyPayload): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token});
+    let options = {headers: headers};
+    return this.http.post('https://localhost:8000/api/social-graph/change-privacy', changePrivacyPayload, options);
+  }
+
   getAllRequests(): Observable<Array<UserModel>> {
     this.token = 'Bearer ' + this.auth.getToken();
     let headers = new HttpHeaders({
@@ -206,6 +215,15 @@ export class UserService {
       'Authorization': this.token });
   let options = { headers: headers };
     return this.http.post(`https://localhost:8000/api/social-graph/request/obican123`, acceptRequestPayload, options);
+  }
+
+  createAcceptRequestThree(acceptRequestPayload: AcceptRequestPayload): Observable<any> {
+    this.token = 'Bearer ' + this.auth.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token });
+  let options = { headers: headers };
+    return this.http.post(`https://localhost:8000/api/social-graph/request/biznis12345`, acceptRequestPayload, options);
   }
 
 }

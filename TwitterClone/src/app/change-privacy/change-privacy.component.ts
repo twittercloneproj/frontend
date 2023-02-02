@@ -39,7 +39,7 @@ export class ChangePrivacyComponent implements OnInit {
     this.changePrivacyPayload.privacy = this.changePrivacyForm.get('privacy')?.value;
 
     if(this.changePrivacyForm.get('privacy')?.value === 'Private' || this.changePrivacyForm.get('privacy')?.value === 'Public') {
-      this.userService.changePrivacy(this.changePrivacyPayload).subscribe((data) => {
+      this.userService.changePrivacySocialGraph(this.changePrivacyPayload).subscribe((data) => {
         this.router.navigateByUrl('/all');
       }, error => {
         throwError(error);
